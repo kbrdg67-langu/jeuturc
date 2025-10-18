@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Je nomme ce fichier index mais c'est juste mon premier jeu sur Githube !--> 
+  
+<title>Générateur de cartes Chance</title>
+<style>
+    body {
+        background-color: #000;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .card {
+        background-color: #111;
+        border: 2px solid #fff;
+        border-radius: 10px;
+        padding: 30px;
+        max-width: 600px;
+        text-align: center;
+        font-size: 1.2em;
+        margin-bottom: 20px;
+        min-height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    button {
+        padding: 15px 30px;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #fff;
+        color: #000;
+        transition: 0.3s;
+    }
+    button:hover {
+        background-color: #888;
+        color: #fff;
+    }
+</style>
+</head>
+<body>
+
+<div class="card" id="card">Clique sur le bouton pour générer une carte chance.</div>
+<button onclick="generateCard()">Nouvelle carte</button>
+
+<script>
+const cards = [
+    "“Günaydın!” - Dis une salutation adaptée au moment de la journée (günaydın, iyi akşamlar…).",
+    "“Kaç para?” - Demande le prix d’un objet imaginaire et réponds en lires.",
+    "“Bu kitap mı?” - Pose une question fermée avec mı / mi / mu / mü.",
+    "“Şu renk ne?” - Qualifie la couleur de l’objet désigné par un autre joueur.",
+    "“Merhaba” - Ecoute l’autre joueur qui se présente.",
+    "Formule 3 - Un joueur éternue : fais lui des beaux vœux.",
+    "L’entreprise 1 - Comment on dit “salle de réunion” ?",
+    "“O nerede?” - Localise une pièce ou un objet de ta maison avec nerede et un démonstratif de lieu.",
+    "“Bu ne?” - Un joueur montre un objet, réponds-lui.",
+    "Formule 4 - Un ami entre chez toi : souhaite lui la bienvenue.",
+    "L’entreprise 2 - Que veut dire “giriş” ?",
+    "“Hangi gün?” - Dis une date complète (jour, mois, saison).",
+    "“Burası neresi?” - Traduis le lieu suggéré par un joueur.",
+    "Formule 1 - Un joueur est malade : souhaite lui bon rétablissement.",
+    "L’entreprise 3 - Traduis deux phrases que tu dis souvent au travail.",
+    "“Kendini tanıt!” - Présente-toi (adın, yaşın, uyruk, meslek, dil).",
+    "“Var mı, yok mu?” - Demande à un joueur s’il y a tel chose.",
+    "Formule 2 - Les collègues vont manger ; souhaite leur bon appétit.",
+    "“Soğuk / sıcak” - Cherche la définition de ses deux mots.",
+    "“Yükselmek / düşmek” - Cherche la définition de ses deux mots.",
+    "“Bende var!” - Réponds avec bende, sende, onda.",
+    "Formule 5 - Remercie un joueur et vérifie qu’il réponde correctement.",
+    "“Hızlı / yavaş” - Cherche la définition de ses deux mots.",
+    "“Kaç / ne kadar?” - Pose une question avec “kaç” et une question avec “ne kadar”, le sens doit être différent !",
+    "Formule 8 - Souhaite bonne chance à un joueur.",
+    "Formule 6 - Des collègues travaillent, souhaite leur bon courage.",
+    "“Artmak / azaltmak” - Cherche la définition de ses deux mots.",
+    "Formule 7 - Interpelle un joueur (excusez-moi)."
+];
+
+function generateCard() {
+    const index = Math.floor(Math.random() * cards.length);
+    document.getElementById("card").innerText = cards[index];
+}
+</script>
+
+</body>
+</html>
