@@ -3,49 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Je nomme ce fichier index mais c'est juste mon premier jeu sur Githube !--> 
-  
+<!-- Je nomme ce fichier index mais c'est juste mon premier jeu sur Github !--> 
+
 <title>Générateur de cartes Chance</title>
 <style>
-    body {
-        background-color: #000;
-        color: #fff;
-        font-family: Arial, sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        margin: 0;
-    }
-    .card {
-        background-color: #111;
-        border: 2px solid #fff;
-        border-radius: 10px;
-        padding: 30px;
-        max-width: 600px;
-        text-align: center;
-        font-size: 1.2em;
-        margin-bottom: 20px;
-        min-height: 120px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    button {
-        padding: 15px 30px;
-        font-size: 1em;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        background-color: #fff;
-        color: #000;
-        transition: 0.3s;
-    }
-    button:hover {
-        background-color: #888;
-        color: #fff;
-    }
+body {
+background-color: #000;
+color: #fff;
+font-family: Arial, sans-serif;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+margin: 0;
+}
+.card {
+background-color: #111;
+border: 2px solid #fff;
+border-radius: 10px;
+padding: 30px;
+max-width: 600px;
+text-align: center;
+font-size: 1.2em;
+margin-bottom: 20px;
+min-height: 120px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+button {
+padding: 15px 30px;
+font-size: 1em;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+background-color: #fff;
+color: #000;
+transition: 0.3s;
+}
+button:hover {
+background-color: #888;
+color: #fff;
+}
 </style>
 </head>
 <body>
@@ -85,8 +85,8 @@ const cards = [
 ];
 
 function generateCard() {
-    const index = Math.floor(Math.random() * cards.length);
-    document.getElementById("card").innerText = cards[index];
+const index = Math.floor(Math.random() * cards.length);
+document.getElementById("card").innerText = cards[index];
 }
 </script>
 
