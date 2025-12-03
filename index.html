@@ -7,36 +7,45 @@
   <!-- Je nomme ce fichier index mais c'est juste mon premier jeu sur Github !--> 
   <style>
     body {
-        font-family: Garamond, serif;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        vertical-align: middle;
-        align-items: center;
         margin: 0;
-        padding: 0;
+        font-family: Garamond, serif;
         background: #7f5417;
         color: #f4eeeb;
     }
 
-    h1 [ 
-        font-size: 2em;
-    ]
+    /* page layout: sidebar + main column */
+    .page {
+        display: flex;
+        min-height: 100vh;
+        align-items: stretch;
+        column-gap: 48px; /* space between menu and main so they don't touch */
+        gap: 48px;
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
 
     p {
-        font-size: 1.2em;
+        font-size: 1.5em;
     }
     
   .menu {
-      position: fixed;
-      top: 20px;
-      left: 50px;
+      /* sidebar column */
+      position: sticky;
+      top: 0;
+      width: 340px; /* élargi comme demandé */
+      height: 100vh;
+      overflow: auto;
       background: #2e200c;
-      border-radius: 8px;
+      border-radius: 0 8px 8px 0;
       box-shadow: 0 2px 8px #110b03;
-      padding: 16px 24px;
+      padding: 16px 18px;
       z-index: 999;
       color: #fff;
+      box-sizing: border-box;
+      overflow: visible; /* allow tooltips to overflow */
   }
   .menu-title {
       font-weight: bold;
@@ -51,6 +60,21 @@
   .menu-list li {
       margin: 8px 0;
   }
+
+        /* main content column */
+        main {
+            flex: 1 auto;
+            box-sizing: border-box;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            align-items: flex-start; /* keep text left-aligned */
+            padding: 40px 32px;
+            background: transparent;
+            overflow: visible; /* allow tooltips to overflow */
+        }
+        
   .menu-list a {
       color: #fff;
       text-decoration: none;
@@ -65,8 +89,10 @@
   .has-tooltip::after {
       content: attr(data-tooltip);
       position: absolute;
-      left: 50%;
-      transform: translateX(-50%) translateY(8px);
+      left: 100%;
+      top: 0;
+      transform: translateY(8px);
+      margin-left: 12px; /* space between link and tooltip */
       white-space: nowrap;
       background: #5e3e11;
       color: #fff;
@@ -76,20 +102,26 @@
       opacity: 0;
       pointer-events: none;
       transition: opacity .12s, transform .12s;
-      bottom: 100%;
-      margin-bottom: 8px;
       z-index: 1000;
   }
   .has-tooltip:hover::after,
   .has-tooltip.show-tooltip::after {
       opacity: 1;
-      transform: translateX(-50%) translateY(0);
+      transform: translateY(0);
       pointer-events: auto;
   }
+    /* Responsive: on narrow screens keep menu near top and remove translate */
+    @media (max-width: 900px) {
+        .page { flex-direction: column; }
+        .menu { position: relative; width: 100%; height: auto; border-radius: 0; box-shadow: none; }
+        main { padding-top: 20px; align-items: center; }
+    }
   </style>
 </head>
 <body>
 
+<!-- Page wrapper: menu latéral + contenu -->
+<div class="page">
 <!-- Menu de navigation vers les index -->
 <nav class="menu">
     <div class="menu-title">Menu</div>
@@ -108,9 +140,10 @@
 
 <main>
     <h1>Mes publications interactifs de turc</h1>
-    <p>Utilisez le menu en haut à gauche pour naviguer vers les différents jeux et ressources que j'ai créés pour apprendre le turc.</p>
+    <p>Utilisez le menu à gauche pour naviguer vers les différents jeux et ressources que j'ai créés pour apprendre le turc.</p>
         <p><small><em>Amusez-vous bien et bon (ré)apprentissage du turc !</em></small></p>
-</main>
+    </main>
+</div>
 
 <!-- Tooltip touch support and basic behavior -->
 <script>
