@@ -1,44 +1,52 @@
-<title>Générateur de cartes Chance</title>
-<style>
-body {
-background-color: #000;
-color: #fff;
-font-family: Arial, sans-serif;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-height: 100vh;
-margin: 0;
-}
-.card {
-background-color: #111;
-border: 2px solid #fff;
-border-radius: 10px;
-padding: 30px;
-max-width: 600px;
-text-align: center;
-font-size: 1.2em;
-margin-bottom: 20px;
-min-height: 120px;
-display: flex;
-align-items: center;
-justify-content: center;
-}
-button {
-padding: 15px 30px;
-font-size: 1em;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-background-color: #fff;
-color: #000;
-transition: 0.3s;
-}
-button:hover {
-background-color: #888;
-color: #fff;
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de cartes Chance</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background-color: #111;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 600px;
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #fff;
+            color: #000;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #888;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
 <script>
 const cards = [
 "Günaydın! – Dis une salutation adaptée au moment de la journée (günaydın, iyi akşamlar…).",
@@ -58,7 +66,7 @@ const cards = [
 "Yükselmek / düşmek – Cherche la définition de ces deux mots.",
 "Demande l'heure.",
 "Quel heure est-il ?",
-"Jeu de rôle : réserve une table au restaurant en indiquant une date et une heure précise"
+"Jeu de rôle : réserve une table au restaurant en indiquant une date et une heure précise.",
 "Souhaite bonne chance à un joueur.",
 "Des collègues travaillent : souhaite-leur bon courage.",
 "Bu ne? – Un joueur montre un objet : réponds-lui.",
