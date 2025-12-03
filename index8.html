@@ -24,9 +24,10 @@
         }
         .question {
             font-size: 24px;
+            color: #dbd6d6;
             margin: 20px 0;
             padding: 15px;
-            background-color: #a6a21d;
+            background-color: #503510;
             border-radius: 4px;
         }
         input {
@@ -36,6 +37,7 @@
             margin: 10px 0;
             border: 2px solid #ddd;
             border-radius: 4px;
+            box-sizing: border-box;
         }
         button {
             width: 100%;
@@ -46,6 +48,7 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            box-sizing: border-box;
         }
         button:hover {
             background-color: #45a049;
@@ -112,10 +115,16 @@
         let currentAnswer = '';
 
         function generateQuestion() {
-            const day = Math.floor(Math.random() * 31) + 1;
             const month = Math.floor(Math.random() * 12) + 1;
+            const maxDays = new Date(2024, month, 0).getDate(); // jours dans le mois
+            const day = Math.floor(Math.random() * maxDays) + 1;
             const date = new Date(2024, month - 1, day);
             const dayOfWeek = date.getDay();
+
+            // Vérifier que les clés existent dans les dictionnaires
+            if (!turkishNumbers[day] || !turkishMonths[month] || !turkishDays[dayOfWeek] || !frenchMonths[month] || !frenchDays[dayOfWeek]) {
+                return generateQuestion(); // réessayer si une clé manque
+            }
 
             const turkishQuestion = `${turkishNumbers[day]} ${turkishMonths[month]} ${turkishDays[dayOfWeek]}`;
             const frenchAnswer = `${frenchDays[dayOfWeek]} ${day} ${frenchMonths[month]}`;
