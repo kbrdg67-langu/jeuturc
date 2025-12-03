@@ -18,6 +18,37 @@ justify-content: center;
 height: 100vh;
 margin: 0;
 }
+.menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #222;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #0007;
+    padding: 16px 24px;
+    z-index: 999;
+}
+.menu-title {
+    font-weight: bold;
+    margin-bottom: 12px;
+    font-size: 1em;
+}
+.menu-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.menu-list li {
+    margin: 8px 0;
+}
+.menu-list a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.menu-list a:hover {
+    color: #1e90ff;
+}
 .card {
 background-color: #111;
 border: 2px solid #fff;
@@ -50,43 +81,57 @@ color: #fff;
 </head>
 <body>
 
+<!-- Menu de navigation vers les index -->
+<nav class="menu">
+    <div class="menu-title">Menu</div>
+    <ul class="menu-list">
+        <li><a href="index">Cartes Chance</a></li>
+        <li><a href="https://kbrdg67-langu.github.io/jeuturc/index2.html">Turc pro - entreprise</a></li>
+        <li><a href="https://kbrdg67-langu.github.io/jeuturc/index3.html">Turc pro - premiers pas</a></li>
+        <li><a href="https://kbrdg67-langu.github.io/jeuturc/index4.html">Turc pro - quotidien</a></li>
+        <li><a href="https://kbrdg67-langu.github.io/jeuturc/index5.html">Turc pro - couleurs, pièces, possession</a></li>
+        <li><a href="https://kbrdg67-langu.github.io/jeuturc/index7.html">Turc pro - nombres, expressions clés</a></li>
+        <li><a href="https://kbrdg67-langu.github.io/jeuturc/index6.html">Turc pro - communiquer avec les chiffress</a></li>
+        <!-- Ajoute ici d'autres liens vers les autres fichiers index du dépôt -->
+    </ul>
+</nav>
+
 <div class="card" id="card">Clique sur le bouton pour générer une carte chance.</div>
 <button onclick="generateCard()">Nouvelle carte</button>
 
 <script>
 const cards = [
-"Günaydın! – Dis une salutation adaptée au moment de la journée (günaydın, iyi akşamlar…)."
-"Kaç para? – Demande le prix d’un objet imaginaire et réponds en lires."
-"Bu kitap mı? – Pose une question fermée avec mı / mi / mu / mü."
-"Şu renk ne? – Qualifie la couleur de l’objet désigné par un autre joueur."
-"Burası neresi? – Traduis le lieu suggéré par un joueur."
-"Kendini tanıt! – Présente-toi (adın, yaşın, uyruk, meslek, dil)."
-"Soğuk / sıcak – Cherche la définition de ces deux mots."
-"Kaç / ne kadar?” – Pose une question avec “kaç” et une question avec “ne kadar”, le sens doit être différent."
-"Merhaba – Écoute l’autre joueur qui se présente."
-"Formule 3 – Un joueur éternue : fais-lui des vœux adaptés."
-"L’entreprise 1 – Comment on dit “salle de réunion” ?"
-"O nerede?” – Localise une pièce ou un objet de ta maison avec nerede et un démonstratif de lieu."
-"Formule 1 – Un joueur est malade : souhaite-lui bon rétablissement."
-"Var mı, yok mu? – Demande à un joueur s’il y a quelque chose."
-"Yükselmek / düşmek – Cherche la définition de ces deux mots."
-"Formule 8 – Souhaite bonne chance à un joueur."
-"Formule 6 – Des collègues travaillent : souhaite-leur bon courage."
-"Bu ne? – Un joueur montre un objet : réponds-lui."
-"Formule 4 – Un ami entre chez toi : souhaite-lui la bienvenue."
-"L’entreprise 2 – Que veut dire “giriş” ?"
-"Hangi gün? – Dis une date complète (jour, mois, saison)."
-"L’entreprise 3 – Traduis deux phrases que tu dis souvent au travail."
-"Formule 2 – Les collègues vont manger : souhaite-leur bon appétit."
-"Formule 5 – Remercie un joueur et vérifie qu’il réponde correctement."
-"Hızlı / yavaş – Cherche la définition de ces deux mots."
+"Günaydın! – Dis une salutation adaptée au moment de la journée (günaydın, iyi akşamlar…).",
+"Kaç para? – Demande le prix d’un objet imaginaire et réponds en lires.",
+"Bu kitap mı? – Pose une question fermée avec mı / mi / mu / mü.",
+"Şu renk ne? – Qualifie la couleur de l’objet désigné par un autre joueur.",
+"Burası neresi? – Traduis le lieu suggéré par un joueur.",
+"Kendini tanıt! – Présente-toi (adın, yaşın, uyruk, meslek, dil).",
+"Soğuk / sıcak – Cherche la définition de ces deux mots.",
+"Kaç / ne kadar?” – Pose une question avec “kaç” et une question avec “ne kadar”, le sens doit être différent.",
+"Merhaba – Écoute l’autre joueur qui se présente.",
+"Formule 3 – Un joueur éternue : fais-lui des vœux adaptés.",
+"L’entreprise 1 – Comment on dit “salle de réunion” ?",
+"O nerede?” – Localise une pièce ou un objet de ta maison avec nerede et un démonstratif de lieu.",
+"Formule 1 – Un joueur est malade : souhaite-lui bon rétablissement.",
+"Var mı, yok mu? – Demande à un joueur s’il y a quelque chose.",
+"Yükselmek / düşmek – Cherche la définition de ces deux mots.",
+"Formule 8 – Souhaite bonne chance à un joueur.",
+"Formule 6 – Des collègues travaillent : souhaite-leur bon courage.",
+"Bu ne? – Un joueur montre un objet : réponds-lui.",
+"Formule 4 – Un ami entre chez toi : souhaite-lui la bienvenue.",
+"L’entreprise 2 – Que veut dire “giriş” ?",
+"Hangi gün? – Dis une date complète (jour, mois, saison).",
+"L’entreprise 3 – Traduis deux phrases que tu dis souvent au travail.",
+"Formule 2 – Les collègues vont manger : souhaite-leur bon appétit.",
+"Formule 5 – Remercie un joueur et vérifie qu’il réponde correctement.",
+"Hızlı / yavaş – Cherche la définition de ces deux mots.",
 "Formule 7 – Interpelle un joueur poliment (excusez-moi)."
-  
 ];
 
 function generateCard() {
-const index = Math.floor(Math.random() * cards.length);
-document.getElementById("card").innerText = cards[index];
+    const index = Math.floor(Math.random() * cards.length);
+    document.getElementById("card").innerText = cards[index];
 }
 </script>
 
