@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title> Conjugaison : anlamak, gelmek, yapmak, konuşmak, istemek</title>
+<title> Conjugaison - drap & drop</title>
 <style>
   body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;line-height:1.4;padding:18px;background:#f7f8fb;color:#111}
   h1{font-size:20px;margin-bottom:6px}
@@ -31,10 +31,11 @@
 <body>
 <h1>Exercice : placer <em>radical</em> + suffixes</h1>
 <div class="instructions panel">
-  <div class="small"><strong>Consıgne :</strong> pour chaque forme donnée, glissew les morceaux (radical / négation / temps / terminaison) dans l'ordre correct.</div>
+  <div class="small"><strong>Consigne :</strong> pour chaque forme donnée, glissez les morceaux (radical / négation / temps / terminaison) dans l'ordre correct.</div>
   <div style="margin-top:6px" class="hint">Rappelez-vous : ordre général = <strong>radical + (ma/me) 'négation' + marqueur de temps (iyor / di / ecek) + suffixe personnel</strong>.</div>
 </div>
-<div class="grid">
+
+  <div class="grid">
   <div class="panel">
     <h2 style="margin:0 0 8px 0">Parties à glisser</h2>
     <div class="pool" id="pool">
@@ -91,124 +92,348 @@
   <div class="panel">
     <h2 style="margin:0 0 8px 0">À compléter — glissez dans l'ordre</h2>
 
-    <div class="small" style="margin-bottom:8px">Pour chaque ligne : <strong>Affirmatif</strong> puis <strong>Négatif</strong>. Déposez 3–5 morceaux selon la forme (les cases vides restent lorsqu'aucun morceau n'est nécessaire).</div>
+    <div class="small" style="margin-bottom:8px">Pour chaque ligne, déposez 1 morceaux selon le verbe (les cases vides restent lorsqu'aucun morceau n'est nécessaire).</div>
 
-    <!-- Rows for each verb and tense -->
-    <div id="exercise">
-      <!-- Anlamak -->
-      <div class="row"><strong>Anlamak — Présent</strong>
-        <div style="margin-left:auto" class="targets">
-          <div class="drop" data-expected='["anla","iyor","um"]' data-type="anla-pres-aff">radical</div>
-          <div class="drop" data-expected='["anla","ma","iyor","um"]' data-type="anla-pres-neg">neg</div>
-        </div>
-      </div>
-      <div class="row"><strong>Anlamak — Passé</strong>
-        <div style="margin-left:auto" class="targets">
-          <div class="drop" data-expected='["anla","di","m"]' data-type="anla-past-aff">radical</div>
-          <div class="drop" data-expected='["anla","ma","di","m"]' data-type="anla-past-neg">neg</div>
-        </div>
-      </div>
-      <div class="row"><strong>Anlamak — Futur</strong>
-        <div style="margin-left:auto" class="targets">
-          <div class="drop" data-expected='["anla","y","acak","m"]' data-type="anla-fut-aff">radical</div>
-          <div class="drop" data-expected='["anla","ma","y","acak","m"]' data-type="anla-fut-neg">neg</div>
-        </div>
-      </div>
+<div id="exercise">
 
-      <!-- Gelmek -->
-      <div class="row"><strong>Gelmek — Présent</strong>
-        <div style="margin-left:auto" class="targets">
-          <div class="drop" data-expected='["gel","iyor","um"]' data-type="gel-pres-aff">radical</div>
-          <div class="drop" data-expected='["gel","me","iyor","um"]' data-type="gel-pres-neg">neg</div>
-        </div>
-      </div>
-      <div class="row"><strong>Gelmek — Passé</strong>
-        <div style="margin-left:auto" class="targets">
-          <div class="drop" data-expected='["gel","di","m"]' data-type="gel-past-aff">radical</div>
-          <div class="drop" data-expected='["gel","me","di","m"]' data-type="gel-past-neg">neg</div>
-        </div>
-      </div>
-      <div class="row"><strong>Gelmek — Futur</strong>
-        <div style="margin-left:auto" class="targets">
-          <div class="drop" data-expected='["gel","ecek","im"]' data-type="gel-fut-aff">radical</div>
-          <div class="drop" data-expected='["gel","me","ecek","im"]' data-type="gel-fut-neg">neg</div>
-        </div>
-      </div>
-
-      <!-- Yapmak -->
-      <div class="row"><strong>Yapmak — Présent</strong>
-        <div style="margin-left:auto" class="targets">
-          <div class="drop" data-expected='["yap","iyor","um"]' data-type="yap-pres-aff">radical</div>
-          <div class="drop" data-expected='["yap","ma","iyor","um"]' data-type="yap-pres-neg">neg</div>
-        </div>
-      </div>
-      <div class="row"><strong>Yapmak — Passé</strong>
-        <div style="margin-left:auto" class="targets">
-          <div class="drop" data-expected='["yap","tı","m"]' data-type="yap-past-aff">radical</div>
-          <div class="drop" data-expected='["yap","ma","dı","m"]' data-type="yap-past-neg">neg</div>
-        </div>
-      </div>
-      <div class="row"><strong>Yapmak — Futur</strong>
-        <div style="margin-left:auto" class="targets">
-          <div class="drop" data-expected='["yap","acak","ım"]' data-type="yap-fut-aff">radical</div>
-          <div class="drop" data-expected='["yap","ma","acak","ım"]' data-type="yap-fut-neg">neg</div>
-        </div>
-      </div>
-
-      <!-- Konuşmak -->
-      <div class="row"><strong>Konuşmak — Présent</strong>
-        <div style="margin-left:auto" class="targets">
-          <div class="drop" data-expected='["konus","uyor","um"]' data-type="konus-pres-aff">radical</div>
-          <div class="drop" data-expected='["konus","ma","uyor","um"]' data-type="konus-pres-neg">neg</div>
-        </div>
-      </div>
-      <div class="row"><strong>Konuşmak — Passé</strong>
-        <div style="margin-left:auto" class="targets">
-          <div class="drop" data-expected='["konus","tu","m"]' data-type="konus-past-aff">radical</div>
-          <div class="drop" data-expected='["konus","ma","dı","m"]' data-type="konus-past-neg">neg</div>
-        </div>
-      </div>
-      <div class="row"><strong>Konuşmak — Futur</strong>
-        <div style="margin-left:auto" class="targets">
-          <div class="drop" data-expected='["konus","acak","ım"]' data-type="konus-fut-aff">radical</div>
-          <div class="drop" data-expected='["konus","ma","acak","ım"]' data-type="konus-fut-neg">neg</div>
-        </div>
-      </div>
-
-      <!-- İstemek -->
-      <div class="row"><strong>İstemek — Présent</strong>
-        <div style="margin-left:auto" class="targets">
-          <div class="drop" data-expected='["iste","iyor","um"]' data-type="iste-pres-aff">radical</div>
-          <div class="drop" data-expected='["iste","me","iyor","um"]' data-type="iste-pres-neg">neg</div>
-        </div>
-      </div>
-      <div class="row"><strong>İstemek — Passé</strong>
-        <div style="margin-left:auto" class="targets">
-          <div class="drop" data-expected='["iste","di","m"]' data-type="iste-past-aff">radical</div>
-          <div class="drop" data-expected='["iste","me","di","m"]' data-type="iste-past-neg">neg</div>
-        </div>
-      </div>
-      <div class="row"><strong>İstemek — Futur</strong>
-        <div style="margin-left:auto" class="targets">
-          <div class="drop" data-expected='["iste","ye","cek","im"]' data-type="iste-fut-aff">radical</div>
-          <div class="drop" data-expected='["iste","me","ye","cek","im"]' data-type="iste-fut-neg">neg</div>
-        </div>
-      </div>
-
-    </div>
-
-    <div style="margin-top:10px" class="flex">
-      <button id="check">Vérifier toutes les lignes</button>
-      <button id="reset" class="clear">Réinitialiser</button>
-      <div id="result" style="margin-left:auto;font-weight:700"></div>
-    </div>
-
-    <footer>
-      <div class="small"><strong>Rappels :</strong> ordre = radical + (ma/me) négation + marqueur de temps + terminaison personnelle. Harmonies vocaliques et liaisons (<em>y/ye</em>) peuvent modifier l’orthographe finale ; l’exercice évalue l’ordre morphologique.</div>
-    </footer>
+<!-- ====================== ANLAMAK ====================== -->
+<!-- Présent -->
+<div class="row"><strong>Anlamak — Présent — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["anla","iyor","um"]'>Ben</div>
+    <div class="drop" data-expected='["anla","iyor","sun"]'>Sen</div>
+    <div class="drop" data-expected='["anla","iyor"]'>O</div>
+    <div class="drop" data-expected='["anla","ıyoruz"]'>Biz</div>
+    <div class="drop" data-expected='["anla","ıyorsunuz"]'>Siz</div>
+    <div class="drop" data-expected='["anla","ıyorlar"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>Anlamak — Présent — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["anla","ma","iyor","um"]'>Ben</div>
+    <div class="drop" data-expected='["anla","ma","iyor","sun"]'>Sen</div>
+    <div class="drop" data-expected='["anla","ma","iyor"]'>O</div>
+    <div class="drop" data-expected='["anla","ma","ıyoruz"]'>Biz</div>
+    <div class="drop" data-expected='["anla","ma","ıyorsunuz"]'>Siz</div>
+    <div class="drop" data-expected='["anla","ma","ıyorlar"]'>Onlar</div>
   </div>
 </div>
 
+<!-- Passé -->
+<div class="row"><strong>Anlamak — Passé — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["anla","dı","m"]'>Ben</div>
+    <div class="drop" data-expected='["anla","dı","n"]'>Sen</div>
+    <div class="drop" data-expected='["anla","dı"]'>O</div>
+    <div class="drop" data-expected='["anla","dık"]'>Biz</div>
+    <div class="drop" data-expected='["anla","dınız"]'>Siz</div>
+    <div class="drop" data-expected='["anla","dılar"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>Anlamak — Passé — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["anla","ma","dı","m"]'>Ben</div>
+    <div class="drop" data-expected='["anla","ma","dı","n"]'>Sen</div>
+    <div class="drop" data-expected='["anla","ma","dı"]'>O</div>
+    <div class="drop" data-expected='["anla","ma","dık"]'>Biz</div>
+    <div class="drop" data-expected='["anla","ma","dınız"]'>Siz</div>
+    <div class="drop" data-expected='["anla","ma","dılar"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- Futur -->
+<div class="row"><strong>Anlamak — Futur — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["anla","y","acak","ım"]'>Ben</div>
+    <div class="drop" data-expected='["anla","y","acak","sın"]'>Sen</div>
+    <div class="drop" data-expected='["anla","y","acak"]'>O</div>
+    <div class="drop" data-expected='["anla","y","acağız"]'>Biz</div>
+    <div class="drop" data-expected='["anla","y","acaksınız"]'>Siz</div>
+    <div class="drop" data-expected='["anla","y","acaklar"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>Anlamak — Futur — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["anla","ma","y","acak","ım"]'>Ben</div>
+    <div class="drop" data-expected='["anla","ma","y","acak","sın"]'>Sen</div>
+    <div class="drop" data-expected='["anla","ma","y","acak"]'>O</div>
+    <div class="drop" data-expected='["anla","ma","y","acağız"]'>Biz</div>
+    <div class="drop" data-expected='["anla","ma","y","acaksınız"]'>Siz</div>
+    <div class="drop" data-expected='["anla","ma","y","acaklar"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- ====================== GELMEK ====================== -->
+<!-- Présent -->
+<div class="row"><strong>Gelmek — Présent — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["gel","iyor","um"]'>Ben</div>
+    <div class="drop" data-expected='["gel","iyor","sun"]'>Sen</div>
+    <div class="drop" data-expected='["gel","iyor"]'>O</div>
+    <div class="drop" data-expected='["gel","iyoruz"]'>Biz</div>
+    <div class="drop" data-expected='["gel","iyorsunuz"]'>Siz</div>
+    <div class="drop" data-expected='["gel","iyorlar"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>Gelmek — Présent — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["gel","me","iyor","um"]'>Ben</div>
+    <div class="drop" data-expected='["gel","me","iyor","sun"]'>Sen</div>
+    <div class="drop" data-expected='["gel","me","iyor"]'>O</div>
+    <div class="drop" data-expected='["gel","me","iyoruz"]'>Biz</div>
+    <div class="drop" data-expected='["gel","me","iyorsunuz"]'>Siz</div>
+    <div class="drop" data-expected='["gel","me","iyorlar"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- Passé -->
+<div class="row"><strong>Gelmek — Passé — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["gel","di","m"]'>Ben</div>
+    <div class="drop" data-expected='["gel","di","n"]'>Sen</div>
+    <div class="drop" data-expected='["gel","di"]'>O</div>
+    <div class="drop" data-expected='["gel","dik"]'>Biz</div>
+    <div class="drop" data-expected='["gel","diniz"]'>Siz</div>
+    <div class="drop" data-expected='["gel","diler"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>Gelmek — Passé — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["gel","me","di","m"]'>Ben</div>
+    <div class="drop" data-expected='["gel","me","di","n"]'>Sen</div>
+    <div class="drop" data-expected='["gel","me","di"]'>O</div>
+    <div class="drop" data-expected='["gel","me","dik"]'>Biz</div>
+    <div class="drop" data-expected='["gel","me","diniz"]'>Siz</div>
+    <div class="drop" data-expected='["gel","me","diler"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- Futur -->
+<div class="row"><strong>Gelmek — Futur — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["gel","ecek","im"]'>Ben</div>
+    <div class="drop" data-expected='["gel","ecek","sin"]'>Sen</div>
+    <div class="drop" data-expected='["gel","ecek"]'>O</div>
+    <div class="drop" data-expected='["gel","ecek","iz"]'>Biz</div>
+    <div class="drop" data-expected='["gel","ecek","siniz"]'>Siz</div>
+    <div class="drop" data-expected='["gel","ecek","ler"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>Gelmek — Futur — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["gel","me","ecek","im"]'>Ben</div>
+    <div class="drop" data-expected='["gel","me","ecek","sin"]'>Sen</div>
+    <div class="drop" data-expected='["gel","me","ecek"]'>O</div>
+    <div class="drop" data-expected='["gel","me","ecek","iz"]'>Biz</div>
+    <div class="drop" data-expected='["gel","me","ecek","siniz"]'>Siz</div>
+    <div class="drop" data-expected='["gel","me","ecek","ler"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- ====================== YAPMAK ====================== -->
+<!-- Présent -->
+<div class="row"><strong>Yapmak — Présent — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["yap","ıyor","ım"]'>Ben</div>
+    <div class="drop" data-expected='["yap","ıyor","sın"]'>Sen</div>
+    <div class="drop" data-expected='["yap","ıyor"]'>O</div>
+    <div class="drop" data-expected='["yap","ıyoruz"]'>Biz</div>
+    <div class="drop" data-expected='["yap","ıyorsunuz"]'>Siz</div>
+    <div class="drop" data-expected='["yap","ıyorlar"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>Yapmak — Présent — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["yap","ma","ıyor","ım"]'>Ben</div>
+    <div class="drop" data-expected='["yap","ma","ıyor","sın"]'>Sen</div>
+    <div class="drop" data-expected='["yap","ma","ıyor"]'>O</div>
+    <div class="drop" data-expected='["yap","ma","ıyoruz"]'>Biz</div>
+    <div class="drop" data-expected='["yap","ma","ıyorsunuz"]'>Siz</div>
+    <div class="drop" data-expected='["yap","ma","ıyorlar"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- Passé -->
+<div class="row"><strong>Yapmak — Passé — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["yap","tı","m"]'>Ben</div>
+    <div class="drop" data-expected='["yap","tı","n"]'>Sen</div>
+    <div class="drop" data-expected='["yap","tı"]'>O</div>
+    <div class="drop" data-expected='["yap","tık"]'>Biz</div>
+    <div class="drop" data-expected='["yap","tınız"]'>Siz</div>
+    <div class="drop" data-expected='["yap","tılar"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>Yapmak — Passé — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["yap","ma","dı","m"]'>Ben</div>
+    <div class="drop" data-expected='["yap","ma","dı","n"]'>Sen</div>
+    <div class="drop" data-expected='["yap","ma","dı"]'>O</div>
+    <div class="drop" data-expected='["yap","ma","dık"]'>Biz</div>
+    <div class="drop" data-expected='["yap","ma","dınız"]'>Siz</div>
+    <div class="drop" data-expected='["yap","ma","dılar"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- Futur -->
+<div class="row"><strong>Yapmak — Futur — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["yap","acak","ım"]'>Ben</div>
+    <div class="drop" data-expected='["yap","acak","sın"]'>Sen</div>
+    <div class="drop" data-expected='["yap","acak"]'>O</div>
+    <div class="drop" data-expected='["yap","acağız"]'>Biz</div>
+    <div class="drop" data-expected='["yap","acaksınız"]'>Siz</div>
+    <div class="drop" data-expected='["yap","acaklar"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>Yapmak — Futur — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["yap","ma","acak","ım"]'>Ben</div>
+    <div class="drop" data-expected='["yap","ma","acak","sın"]'>Sen</div>
+    <div class="drop" data-expected='["yap","ma","acak"]'>O</div>
+    <div class="drop" data-expected='["yap","ma","acağız"]'>Biz</div>
+    <div class="drop" data-expected='["yap","ma","acaksınız"]'>Siz</div>
+    <div class="drop" data-expected='["yap","ma","acaklar"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- ====================== KONUSMAK ====================== -->
+<!-- Présent -->
+<div class="row"><strong>Konuşmak — Présent — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["konuş","uyor","um"]'>Ben</div>
+    <div class="drop" data-expected='["konuş","uyor","sun"]'>Sen</div>
+    <div class="drop" data-expected='["konuş","uyor"]'>O</div>
+    <div class="drop" data-expected='["konuş","uyoruz"]'>Biz</div>
+    <div class="drop" data-expected='["konuş","uyorsunuz"]'>Siz</div>
+    <div class="drop" data-expected='["konuş","uyorlar"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>Konuşmak — Présent — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["konuş","ma","uyor","um"]'>Ben</div>
+    <div class="drop" data-expected='["konuş","ma","uyor","sun"]'>Sen</div>
+    <div class="drop" data-expected='["konuş","ma","uyor"]'>O</div>
+    <div class="drop" data-expected='["konuş","ma","uyoruz"]'>Biz</div>
+    <div class="drop" data-expected='["konuş","ma","uyorsunuz"]'>Siz</div>
+    <div class="drop" data-expected='["konuş","ma","uyorlar"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- Passé -->
+<div class="row"><strong>Konuşmak — Passé — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["konuş","tu","m"]'>Ben</div>
+    <div class="drop" data-expected='["konuş","tu","n"]'>Sen</div>
+    <div class="drop" data-expected='["konuş","tu"]'>O</div>
+    <div class="drop" data-expected='["konuş","tuk"]'>Biz</div>
+    <div class="drop" data-expected='["konuş","tunuz"]'>Siz</div>
+    <div class="drop" data-expected='["konuş","tular"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>Konuşmak — Passé — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["konuş","ma","dı","m"]'>Ben</div>
+    <div class="drop" data-expected='["konuş","ma","dı","n"]'>Sen</div>
+    <div class="drop" data-expected='["konuş","ma","dı"]'>O</div>
+    <div class="drop" data-expected='["konuş","ma","dık"]'>Biz</div>
+    <div class="drop" data-expected='["konuş","ma","dınız"]'>Siz</div>
+    <div class="drop" data-expected='["konuş","ma","dılar"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- Futur -->
+<div class="row"><strong>Konuşmak — Futur — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["konuş","acak","ım"]'>Ben</div>
+    <div class="drop" data-expected='["konuş","acak","sın"]'>Sen</div>
+    <div class="drop" data-expected='["konuş","acak"]'>O</div>
+    <div class="drop" data-expected='["konuş","acağız"]'>Biz</div>
+    <div class="drop" data-expected='["konuş","acaksınız"]'>Siz</div>
+    <div class="drop" data-expected='["konuş","acaklar"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>Konuşmak — Futur — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["konuş","ma","acak","ım"]'>Ben</div>
+    <div class="drop" data-expected='["konuş","ma","acak","sın"]'>Sen</div>
+    <div class="drop" data-expected='["konuş","ma","acak"]'>O</div>
+    <div class="drop" data-expected='["konuş","ma","acağız"]'>Biz</div>
+    <div class="drop" data-expected='["konuş","ma","acaksınız"]'>Siz</div>
+    <div class="drop" data-expected='["konuş","ma","acaklar"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- ====================== ISTEMEK ====================== -->
+<!-- Présent -->
+<div class="row"><strong>İstemek — Présent — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["iste","iyor","im"]'>Ben</div>
+    <div class="drop" data-expected='["iste","iyor","sin"]'>Sen</div>
+    <div class="drop" data-expected='["iste","iyor"]'>O</div>
+    <div class="drop" data-expected='["iste","iyoruz"]'>Biz</div>
+    <div class="drop" data-expected='["iste","iyorsunuz"]'>Siz</div>
+    <div class="drop" data-expected='["iste","iyorlar"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>İstemek — Présent — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["iste","me","iyor","im"]'>Ben</div>
+    <div class="drop" data-expected='["iste","me","iyor","sin"]'>Sen</div>
+    <div class="drop" data-expected='["iste","me","iyor"]'>O</div>
+    <div class="drop" data-expected='["iste","me","iyoruz"]'>Biz</div>
+    <div class="drop" data-expected='["iste","me","iyorsunuz"]'>Siz</div>
+    <div class="drop" data-expected='["iste","me","iyorlar"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- Passé -->
+<div class="row"><strong>İstemek — Passé — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["iste","di","m"]'>Ben</div>
+    <div class="drop" data-expected='["iste","di","n"]'>Sen</div>
+    <div class="drop" data-expected='["iste","di"]'>O</div>
+    <div class="drop" data-expected='["iste","dik"]'>Biz</div>
+    <div class="drop" data-expected='["iste","diniz"]'>Siz</div>
+    <div class="drop" data-expected='["iste","diler"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>İstemek — Passé — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["iste","me","di","m"]'>Ben</div>
+    <div class="drop" data-expected='["iste","me","di","n"]'>Sen</div>
+    <div class="drop" data-expected='["iste","me","di"]'>O</div>
+    <div class="drop" data-expected='["iste","me","dik"]'>Biz</div>
+    <div class="drop" data-expected='["iste","me","diniz"]'>Siz</div>
+    <div class="drop" data-expected='["iste","me","diler"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- Futur -->
+<div class="row"><strong>İstemek — Futur — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["iste","ye","cek","im"]'>Ben</div>
+    <div class="drop" data-expected='["iste","ye","cek","sin"]'>Sen</div>
+    <div class="drop" data-expected='["iste","ye","cek"]'>O</div>
+    <div class="drop" data-expected='["iste","ye","ceğiz"]'>Biz</div>
+    <div class="drop" data-expected='["iste","ye","ceksiniz"]'>Siz</div>
+    <div class="drop" data-expected='["iste","ye","cekler"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>İstemek — Futur — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["iste","me","ye","cek","im"]'>Ben</div>
+    <div class="drop" data-expected='["iste","me","ye","cek","sin"]'>Sen</div>
+    <div class="drop" data-expected='["iste","me","ye","cek"]'>O</div>
+    <div class="drop" data-expected='["iste","me","ye","ceğiz"]'>Biz</div>
+    <div class="drop" data-expected='["iste","me","ye","ceksiniz"]'>Siz</div>
+    <div class="drop" data-expected='["iste","me","ye","cekler"]'>Onlar</div>
+  </div>
+</div>
+
+</div>
+
+  
 <script>
 // Drag & drop basic
 let dragged = null;
