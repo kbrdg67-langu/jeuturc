@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title> Conjugaison : anlamak, gelmek, yapmak, konuşmak, istemek</title>
+<style>
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;line-height:1.4;padding:18px;background:#f7f8fb;color:#111}
+  h1{font-size:20px;margin-bottom:6px}
+  .instructions{background:#fff;border-left:4px solid #2b6cb0;padding:10px;margin-bottom:12px}
+  .grid{display:grid;grid-template-columns:1fr 420px;gap:20px}
+  .panel{background:#fff;padding:12px;border-radius:8px;box-shadow:0 1px 0 rgba(0,0,0,0.04)}
+  .pool{display:flex;flex-wrap:wrap;gap:8px}
+  .pill{background:#eef2ff;border:1px solid #d6defe;padding:6px 8px;border-radius:6px;cursor:grab}
+  .row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #eee}
+  .targets{display:flex;gap:6px}
+  .drop{min-width:110px;height:36px;border:2px dashed #cbd5e1;border-radius:6px;padding:4px;display:flex;align-items:center;justify-content:center;background:#fbfdff}
+  .drop.filled{border-style:solid;background:#e6fffa}
+  .small{font-size:13px;color:#555}
+  button{background:#2b6cb0;color:#fff;padding:8px 12px;border-radius:6px;border:0;cursor:pointer}
+  .ok{color:green;font-weight:700}
+  .bad{color:#c53030;font-weight:700}
+  .hint{font-size:13px;color:#333}
+  footer{margin-top:14px;font-size:13px;color:#444}
+  .flex{display:flex;gap:8px;align-items:center}
+  .clear{background:#e2e8f0;color:#111}
+</style>
+
+
+</head>
+<body>
+<h1>Exercice : placer <em>radical</em> + suffixes</h1>
+<div class="instructions panel">
+  <div class="small"><strong>Consıgne :</strong> pour chaque forme donnée, glissew les morceaux (radical / négation / temps / terminaison) dans l'ordre correct.</div>
+  <div style="margin-top:6px" class="hint">Rappelez-vous : ordre général = <strong>radical + (ma/me) 'négation' + marqueur de temps (iyor / di / ecek) + suffixe personnel</strong>.</div>
+</div>
+<div class="grid">
+  <div class="panel">
+    <h2 style="margin:0 0 8px 0">Parties à glisser</h2>
+    <div class="pool" id="pool">
+      <!-- radicals -->
+      <div class="pill" draggable="true" data-id="anla">anla-</div>
+      <div class="pill" draggable="true" data-id="gel">gel-</div>
+      <div class="pill" draggable="true" data-id="yap">yap-</div>
+      <div class="pill" draggable="true" data-id="konus">konuş-</div>
+      <div class="pill" draggable="true" data-id="iste">iste-</div>
+
+      <!-- négation -->
+      <div class="pill" draggable="true" data-id="ma">-ma</div>
+      <div class="pill" draggable="true" data-id="me">-me</div>
+
+      <!-- temps / liaison -->
+      <div class="pill" draggable="true" data-id="iyor">‑iyor</div>
+      <div class="pill" draggable="true" data-id="uyor">‑uyor</div>
+      <div class="pill" draggable="true" data-id="di">-di</div>
+      <div class="pill" draggable="true" data-id="di/">-dı</div>
+      <div class="pill" draggable="true" data-id="ti/">-tı</div>
+      <div class="pill" draggable="true" data-id="ti">-ti</div>
+      <div class="pill" draggable="true" data-id="tu/">-tu</div>
+      <div class="pill" draggable="true" data-id="tu/">-tü</div>
+      <div class="pill" draggable="true" data-id="ecek">-ecek</div>
+     <div class="pill" draggable="true" data-id="acak">-acak</div>
+      <div class="pill" draggable="true" data-id="yacak">-yacak</div>
+      <div class="pill" draggable="true" data-id="yecek">-yecek</div>
+
+      <!-- terminaisons -->
+      <div class="pill" draggable="true" data-id="um">‑um</div>
+            <div class="pill" draggable="true" data-id="im/">‑ım</div>
+            <div class="pill" draggable="true" data-id="üm">‑üm</div>
+            <div class="pill" draggable="true" data-id="im">‑im</div>
+<div class="pill" draggable="true" data-id="sın">-sın</div>
+<div class="pill" draggable="true" data-id="sin">-sin</div>
+<div class="pill" draggable="true" data-id="sun">-sun</div>
+      <div class="pill" draggable="true" data-id="sün">-sün</div>
+<div class="pill" draggable="true" data-id="ız">-ız</div>
+<div class="pill" draggable="true" data-id="iz">-iz</div>
+<div class="pill" draggable="true" data-id="uz">-uz</div>
+<div class="pill" draggable="true" data-id="üz">-üz</div>
+      <div class="pill" draggable="true" data-id="sınız">-sınız</div>
+<div class="pill" draggable="true" data-id="siniz">-siniz</div>
+<div class="pill" draggable="true" data-id="sunuz">-sunuz</div>
+<div class="pill" draggable="true" data-id="sünüz">-sünüz</div>
+      <div class="pill" draggable="true" data-id="m">‑m</div>
+      <div class="pill" draggable="true" data-id="im">‑im</div>
+ <div class="pill" draggable="true" data-id="lar">-lar</div>
+<div class="pill" draggable="true" data-id="ler">-ler</div>
+      <div class="pill" draggable="true" data-id="y">‑y</div>
+      <div class="pill" draggable="true" data-id="ye">‑ye</div>
+    </div>
+
+  <div class="panel">
+    <h2 style="margin:0 0 8px 0">À compléter — glissez dans l'ordre</h2>
+
+    <div class="small" style="margin-bottom:8px">Pour chaque ligne : <strong>Affirmatif</strong> puis <strong>Négatif</strong>. Déposez 3–5 morceaux selon la forme (les cases vides restent lorsqu'aucun morceau n'est nécessaire).</div>
+
+    <!-- Rows for each verb and tense -->
+    <div id="exercise">
+      <!-- Anlamak -->
+      <div class="row"><strong>Anlamak — Présent</strong>
+        <div style="margin-left:auto" class="targets">
+          <div class="drop" data-expected='["anla","iyor","um"]' data-type="anla-pres-aff">radical</div>
+          <div class="drop" data-expected='["anla","ma","iyor","um"]' data-type="anla-pres-neg">neg</div>
+        </div>
+      </div>
+      <div class="row"><strong>Anlamak — Passé</strong>
+        <div style="margin-left:auto" class="targets">
+          <div class="drop" data-expected='["anla","di","m"]' data-type="anla-past-aff">radical</div>
+          <div class="drop" data-expected='["anla","ma","di","m"]' data-type="anla-past-neg">neg</div>
+        </div>
+      </div>
+      <div class="row"><strong>Anlamak — Futur</strong>
+        <div style="margin-left:auto" class="targets">
+          <div class="drop" data-expected='["anla","y","acak","m"]' data-type="anla-fut-aff">radical</div>
+          <div class="drop" data-expected='["anla","ma","y","acak","m"]' data-type="anla-fut-neg">neg</div>
+        </div>
+      </div>
+
+      <!-- Gelmek -->
+      <div class="row"><strong>Gelmek — Présent</strong>
+        <div style="margin-left:auto" class="targets">
+          <div class="drop" data-expected='["gel","iyor","um"]' data-type="gel-pres-aff">radical</div>
+          <div class="drop" data-expected='["gel","me","iyor","um"]' data-type="gel-pres-neg">neg</div>
+        </div>
+      </div>
+      <div class="row"><strong>Gelmek — Passé</strong>
+        <div style="margin-left:auto" class="targets">
+          <div class="drop" data-expected='["gel","di","m"]' data-type="gel-past-aff">radical</div>
+          <div class="drop" data-expected='["gel","me","di","m"]' data-type="gel-past-neg">neg</div>
+        </div>
+      </div>
+      <div class="row"><strong>Gelmek — Futur</strong>
+        <div style="margin-left:auto" class="targets">
+          <div class="drop" data-expected='["gel","ecek","im"]' data-type="gel-fut-aff">radical</div>
+          <div class="drop" data-expected='["gel","me","ecek","im"]' data-type="gel-fut-neg">neg</div>
+        </div>
+      </div>
+
+      <!-- Yapmak -->
+      <div class="row"><strong>Yapmak — Présent</strong>
+        <div style="margin-left:auto" class="targets">
+          <div class="drop" data-expected='["yap","iyor","um"]' data-type="yap-pres-aff">radical</div>
+          <div class="drop" data-expected='["yap","ma","iyor","um"]' data-type="yap-pres-neg">neg</div>
+        </div>
+      </div>
+      <div class="row"><strong>Yapmak — Passé</strong>
+        <div style="margin-left:auto" class="targets">
+          <div class="drop" data-expected='["yap","tı","m"]' data-type="yap-past-aff">radical</div>
+          <div class="drop" data-expected='["yap","ma","dı","m"]' data-type="yap-past-neg">neg</div>
+        </div>
+      </div>
+      <div class="row"><strong>Yapmak — Futur</strong>
+        <div style="margin-left:auto" class="targets">
+          <div class="drop" data-expected='["yap","acak","ım"]' data-type="yap-fut-aff">radical</div>
+          <div class="drop" data-expected='["yap","ma","acak","ım"]' data-type="yap-fut-neg">neg</div>
+        </div>
+      </div>
+
+      <!-- Konuşmak -->
+      <div class="row"><strong>Konuşmak — Présent</strong>
+        <div style="margin-left:auto" class="targets">
+          <div class="drop" data-expected='["konus","uyor","um"]' data-type="konus-pres-aff">radical</div>
+          <div class="drop" data-expected='["konus","ma","uyor","um"]' data-type="konus-pres-neg">neg</div>
+        </div>
+      </div>
+      <div class="row"><strong>Konuşmak — Passé</strong>
+        <div style="margin-left:auto" class="targets">
+          <div class="drop" data-expected='["konus","tu","m"]' data-type="konus-past-aff">radical</div>
+          <div class="drop" data-expected='["konus","ma","dı","m"]' data-type="konus-past-neg">neg</div>
+        </div>
+      </div>
+      <div class="row"><strong>Konuşmak — Futur</strong>
+        <div style="margin-left:auto" class="targets">
+          <div class="drop" data-expected='["konus","acak","ım"]' data-type="konus-fut-aff">radical</div>
+          <div class="drop" data-expected='["konus","ma","acak","ım"]' data-type="konus-fut-neg">neg</div>
+        </div>
+      </div>
+
+      <!-- İstemek -->
+      <div class="row"><strong>İstemek — Présent</strong>
+        <div style="margin-left:auto" class="targets">
+          <div class="drop" data-expected='["iste","iyor","um"]' data-type="iste-pres-aff">radical</div>
+          <div class="drop" data-expected='["iste","me","iyor","um"]' data-type="iste-pres-neg">neg</div>
+        </div>
+      </div>
+      <div class="row"><strong>İstemek — Passé</strong>
+        <div style="margin-left:auto" class="targets">
+          <div class="drop" data-expected='["iste","di","m"]' data-type="iste-past-aff">radical</div>
+          <div class="drop" data-expected='["iste","me","di","m"]' data-type="iste-past-neg">neg</div>
+        </div>
+      </div>
+      <div class="row"><strong>İstemek — Futur</strong>
+        <div style="margin-left:auto" class="targets">
+          <div class="drop" data-expected='["iste","ye","cek","im"]' data-type="iste-fut-aff">radical</div>
+          <div class="drop" data-expected='["iste","me","ye","cek","im"]' data-type="iste-fut-neg">neg</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:10px" class="flex">
+      <button id="check">Vérifier toutes les lignes</button>
+      <button id="reset" class="clear">Réinitialiser</button>
+      <div id="result" style="margin-left:auto;font-weight:700"></div>
+    </div>
+
+    <footer>
+      <div class="small"><strong>Rappels :</strong> ordre = radical + (ma/me) négation + marqueur de temps + terminaison personnelle. Harmonies vocaliques et liaisons (<em>y/ye</em>) peuvent modifier l’orthographe finale ; l’exercice évalue l’ordre morphologique.</div>
+    </footer>
+  </div>
+</div>
+
+<script>
+// Drag & drop basic
+let dragged = null;
+const pool = document.getElementById('pool');
+pool.addEventListener('dragstart', e=>{
+  if(e.target && e.target.classList.contains('pill')){
+    dragged = e.target;
+    e.dataTransfer.setData('text/plain', e.target.dataset.id);
+  }
+});
+
+document.querySelectorAll('.drop').forEach(d => {
+  d.addEventListener('dragover', ev=>{ ev.preventDefault(); d.classList.add('filled'); });
+  d.addEventListener('dragleave', ev=>{ d.classList.remove('filled'); });
+  d.addEventListener('drop', ev=>{
+    ev.preventDefault(); d.classList.remove('filled');
+    const id = ev.dataTransfer.getData('text/plain');
+    if(!id) return;
+    // create clone
+    const pill = document.querySelector('.pill[data-id="'+id+'"]').cloneNode(true);
+    pill.setAttribute('draggable','true');
+    pill.addEventListener('dragstart', e=>{ dragged = pill; e.dataTransfer.setData('text/plain', pill.dataset.id); });
+    pill.addEventListener('dblclick', ()=>{ d.innerHTML=''; d.classList.remove('filled'); });
+    d.innerHTML='';
+    d.appendChild(pill);
+  });
+});
+
+// allow dragging pills out of drops back to pool
+pool.addEventListener('dragover', e=>e.preventDefault());
+pool.addEventListener('drop', e=>{
+  e.preventDefault(); const id=e.dataTransfer.getData('text/plain'); if(!id) return; const existing=document.querySelector('.pill[data-id="'+id+'"]'); if(existing) return; });
+
+// Check function
+function getDroppedIds(drop){
+  if(!drop.firstChild) return [];
+  // if pill contains combined pieces (we allow only one pill per drop here)
+  return [drop.firstChild.dataset.id];
+}
+
+function checkAll(){
+  let total = 0, correct = 0;
+  document.querySelectorAll('.drop').forEach(drop =>{
+    const expected = JSON.parse(drop.dataset.expected);
+    total++;
+    const dropped = getDroppedIds(drop);
+    // if expected length > dropped length -> allow partial checks: we compare sequence starting from radical then other pieces possibly in multiple drops
+    // For this exercise we expect 1 piece per drop; if no piece, it's incorrect
+    if(dropped.length===0){ drop.style.outline='3px solid #e53e3e'; drop.title='vide'; }
+    const ok = arraysEqual(expected, dropped) || arraysEqual(expected, dropped);
+    if(ok){ drop.style.outline='3px solid #2f855a'; drop.title='ok'; correct++; }
+    else { drop.style.outline='3px solid #e53e3e'; drop.title='incorrect'; }
+  });
+  const res = document.getElementById('result');
+  res.textContent = correct + ' / ' + total + ' correct';
+}
+
+document.getElementById('check').addEventListener('click', checkAll);
+
+document.getElementById('reset').addEventListener('click', ()=>{
+  document.querySelectorAll('.drop').forEach(d=>{ d.innerHTML=''; d.style.outline='none'; d.classList.remove('filled'); });
+  document.getElementById('result').textContent='';
+});
+
+function arraysEqual(a,b){
+  if(a.length!==b.length) return false;
+  for(let i=0;i<a.length;i++) if(a[i]!==b[i]) return false;
+  return true;
+}
+
+</script>
+</body>
+</html>
