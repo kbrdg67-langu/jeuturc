@@ -1,4 +1,446 @@
 <!doctype html>
+</html>
+<!doctype html>
+</html>
+<h1>Exercice : placer <em>radical</em> + suffixes</h1>
+});
+  }
+    e.dataTransfer.setData('text/plain', e.target.dataset.id);
+    dragged = e.target;
+  if(e.target && e.target.classList.contains('pill')){
+document.addEventListener('dragstart', e=>{
+let dragged = null;
+// Drag & drop basic
+
+generatePhrases();
+// Generate on load
+
+}
+  });
+    }
+      drop.dataset.expected = '[]';
+    } else {
+      drop.dataset.expected = JSON.stringify([expected[i]]);
+    if (i < expected.length) {
+  drops.forEach((drop, i) => {
+  const drops = document.querySelectorAll('#targets .drop');
+  const expected = selected.expected;
+  document.getElementById('person').textContent = person;
+  else if (selected.phrase.startsWith('Ils')) person = 'onlar';
+  else if (selected.phrase.startsWith('Vous')) person = 'siz';
+  else if (selected.phrase.startsWith('Nous')) person = 'biz';
+  else if (selected.phrase.startsWith('Il/Elle') || selected.phrase.startsWith('Il')) person = 'o';
+  else if (selected.phrase.startsWith('Tu')) person = 'sen';
+  if (selected.phrase.startsWith('Je')) person = 'ben';
+  let person = '';
+  document.getElementById('phrase').textContent = selected.phrase;
+  const selected = phrases[randomKey][personIndex];
+  const personIndex = Math.floor(Math.random() * phrases[randomKey].length);
+  const randomKey = keys[Math.floor(Math.random() * keys.length)];
+  const keys = Object.keys(phrases);
+function generatePhrases() {
+
+};
+  ]
+'iste-fut-neg': [
+    {phrase: "Ils/Elles ne vont pas vouloir", expected: ["iste","me","yece","k","ler"]},
+    {phrase: "Vous n'allez pas vouloir", expected: ["iste","me","yece","k","siniz"]},
+    {phrase: "Nous n'allons pas vouloir", expected: ["iste","me","yece","ğ","iz"]},
+    {phrase: "Il/Elle ne va pas vouloir", expected: ["iste","me","yece","k"]},
+    {phrase: "Tu ne vas pas vouloir", expected: ["iste","me","yece","k","sin"]},
+    {phrase: "Je ne vais pas vouloir", expected: ["iste","me","yece","ğ","im"]},
+],
+'iste-fut-aff': [
+    {phrase: "Ils/Elles vont vouloir", expected: ["iste","yece","k","ler"]},
+    {phrase: "Vous allez vouloir", expected: ["iste","yece","k","siniz"]},
+    {phrase: "Nous allons vouloir", expected: ["iste","yece","ğ","iz"]},
+    {phrase: "Il/Elle va vouloir", expected: ["iste","yece","k"]},
+    {phrase: "Tu vas vouloir", expected: ["iste","yece","k","sin"]},
+    {phrase: "Je vais vouloir", expected: ["iste","yece","ğ", "im"]},
+],
+'iste-past-neg': [
+    {phrase: "Ils/Elles n'ont pas voulu", expected: ["iste","me","di","lar"]},
+    {phrase: "Vous n'avez pas voulu", expected: ["iste","me","di","nız"]},
+    {phrase: "Nous n'avons pas voulu", expected: ["iste","me","di","k"]},
+    {phrase: "Il/Elle n'a pas voulu", expected: ["iste","me","di"]},
+    {phrase: "Tu n'as pas voulu", expected: ["iste","me","di","n"]},
+    {phrase: "Je n'ai pas voulu", expected: ["iste","me","di","m"]},
+],
+'iste-past-aff': [
+    {phrase: "Ils/Elles ont voulu", expected: ["iste","di","ler"]},
+    {phrase: "Vous avez voulu", expected: ["iste","di","niz"]},
+    {phrase: "Nous avons voulu", expected: ["iste","di","k"]},
+    {phrase: "Il/Elle a voulu", expected: ["iste","di"]},
+    {phrase: "Tu as voulu", expected: ["iste","di","n"]},
+    {phrase: "J'ai voulu", expected: ["iste","di","m"]},
+],
+'iste-pres-neg': [
+    {phrase: "Ils/Elles ne veulent pas", expected: ["iste","m","iyor","lar"]},
+    {phrase: "Vous ne voulez pas", expected: ["iste","m","iyor","sunuz"]},
+    {phrase: "Nous ne voulons pas", expected: ["iste","m","iyor","uz"]},
+    {phrase: "Il/Elle ne veut pas", expected: ["iste","m","iyor"]},
+    {phrase: "Tu ne veux pas", expected: ["iste","m","iyor","sun"]},
+    {phrase: "Je ne veux pas", expected: ["iste","m","iyor","um"]},
+],
+'iste-pres-aff': [
+    {phrase: "Ils/Elles veulent", expected: ["ist","iyor","lar"]},
+    {phrase: "Vous voulez", expected: ["ist","iyor","sunuz"]},
+    {phrase: "Nous voulons", expected: ["ist","iyor","uz"]},
+    {phrase: "Il/Elle veut", expected: ["ist","iyor"]},
+    {phrase: "Tu veux", expected: ["ist","iyor","sun"]},
+    {phrase: "Je veux", expected: ["ist","iyor","um"]},
+],
+'konus-fut-neg': [
+    {phrase: "Ils/Elles ne vont pas parler", expected: ["konus","ma","yaca","k","lar"]},
+    {phrase: "Vous n'allez pas parler", expected: ["konus","ma","yaca","k","sınız"]},
+    {phrase: "Nous n'allons pas parler", expected: ["konus","ma","yaca","ğ","ız"]},
+    {phrase: "Il/Elle ne va pas parler", expected: ["konus","ma","yaca","k"]},
+    {phrase: "Tu ne vas pas parler", expected: ["konus","ma","yaca","k","sın"]},
+    {phrase: "Je ne vais pas parler", expected: ["konus","ma","yaca","ğ","ım"]},
+],
+'konus-fut-aff': [
+    {phrase: "Ils/Elles vont parler", expected: ["konus","aca","k","lar"]},
+    {phrase: "Vous allez parler", expected: ["konus","aca","k","sınız"]},
+    {phrase: "Nous allons parler", expected: ["konus","aca","ğ","ız"]},
+    {phrase: "Il/Elle va parler", expected: ["konus","aca","k"]},
+    {phrase: "Tu vas parler", expected: ["konus","aca","k","sın"]},
+    {phrase: "Je vais parler", expected: ["konus","aca","ğ","ım"]},
+],
+'konus-past-neg': [
+    {phrase: "Ils/Elles n'ont pas parlé", expected: ["konus","ma","dı","lar"]},
+    {phrase: "Vous n'avez pas parlé", expected: ["konus","ma","dı","nız"]},
+    {phrase: "Nous n'avons pas parlé", expected: ["konus","ma","dı","k"]},
+    {phrase: "Il/Elle n'a pas parlé", expected: ["konus","ma","dı"]},
+    {phrase: "Tu n'as pas parlé", expected: ["konus","ma","dı","n"]},
+    {phrase: "Je n'ai pas parlé", expected: ["konus","ma","dı","m"]},
+],
+'konus-past-aff': [
+    {phrase: "Ils/Elles ont parlé", expected: ["konus","tu","lar"]},
+    {phrase: "Vous avez parlé", expected: ["konus","tu","nuz"]},
+    {phrase: "Nous avons parlé", expected: ["konus","tu","k"]},
+    {phrase: "Il/Elle a parlé", expected: ["konus","tu"]},
+    {phrase: "Tu as parlé", expected: ["konus","tu","n"]},
+    {phrase: "J'ai parlé", expected: ["konus","tu","m"]},
+],
+'konus-pres-neg': [
+    {phrase: "Ils/Elles ne parlent pas", expected: ["konus","m","uyor","lar"]},
+    {phrase: "Vous ne parlez pas", expected: ["konus","m","uyor","sunuz"]},
+    {phrase: "Nous ne parlons pas", expected: ["konus","m","uyor","uz"]},
+    {phrase: "Il/Elle ne parle pas", expected: ["konus","m","uyor"]},
+    {phrase: "Tu ne parles pas", expected: ["konus","m","uyor","sun"]},
+    {phrase: "Je ne parle pas", expected: ["konus","m","uyor","um"]},
+],
+'konus-pres-aff': [
+    {phrase: "Ils/Elles parlent", expected: ["konus","uyor","lar"]},
+    {phrase: "Vous parlez", expected: ["konus","uyor","sunuz"]},
+    {phrase: "Nous parlons", expected: ["konus","uyor","uz"]},
+    {phrase: "Il/Elle parle", expected: ["konus","uyor"]},
+    {phrase: "Tu parles", expected: ["konus","uyor","sun"]},
+    {phrase: "Je parle", expected: ["konus","uyor","um"]},
+],
+'yap-fut-neg': [
+    {phrase: "Ils/Elles ne vont pas faire", expected: ["yap","ma","y", "aca","k","lar"]},
+    {phrase: "Vous n'allez pas faire", expected: ["yap","ma","y", "aca","k","sınız"]},
+    {phrase: "Nous n'allons pas faire", expected: ["yap","ma","y", "aca","ğ","ız"]},
+    {phrase: "Il/Elle ne va pas faire", expected: ["yap","ma","y", "aca","k"]},
+    {phrase: "Tu ne vas pas faire", expected: ["yap","ma","y", "aca","k","sın"]},
+    {phrase: "Je ne vais pas faire", expected: ["yap","ma","y", "aca","ğ","ım"]},
+],
+'yap-fut-aff': [
+    {phrase: "Ils/Elles vont faire", expected: ["yap","aca","k","lar"]},
+    {phrase: "Vous allez faire", expected: ["yap","aca","k","sınız"]},
+    {phrase: "Nous allons faire", expected: ["yap","aca","ğ","ız"]},
+    {phrase: "Il/Elle va faire", expected: ["yap","aca","k"]},
+    {phrase: "Tu vas faire", expected: ["yap","aca","k","sın"]},
+    {phrase: "Je vais faire", expected: ["yap","aca","ğ","ım"]},
+],
+'yap-past-neg': [
+    {phrase: "Ils/Elles n'ont pas fait", expected: ["yap","ma","dı","lar"]},
+    {phrase: "Vous n'avez pas fait", expected: ["yap","ma","dı","nız"]},
+    {phrase: "Nous n'avons pas fait", expected: ["yap","ma","dı","k"]},
+    {phrase: "Il/Elle n'a pas fait", expected: ["yap","ma","dı"]},
+    {phrase: "Tu n'as pas fait", expected: ["yap","ma","dı","n"]},
+    {phrase: "Je n'ai pas fait", expected: ["yap","ma","dı","m"]},
+],
+    {phrase: "Ils/Elles ont fait", expected: ["yap","tı","lar"]}
+    {phrase: "Vous avez fait", expected: ["yap","tı","nız"]},
+    {phrase: "Nous avons fait", expected: ["yap","tı","k"]},
+    {phrase: "Il/Elle a fait", expected: ["yap","tı"]},
+    {phrase: "Tu as fait", expected: ["yap","tı","n"]},
+    {phrase: "J'ai fait", expected: ["yap","tı","m"]},
+  'yap-past-aff': [
+  ],
+    {phrase: "Ils/Elles ne font pas", expected: ["yap","m","ıyor","lar"]}
+    {phrase: "Vous ne faites pas", expected: ["yap","m","ıyor","sunuz"]},
+    {phrase: "Nous ne faisons pas", expected: ["yap","m","ıyor","uz"]},
+    {phrase: "Il/Elle ne fait pas", expected: ["yap","m","ıyor"]},
+    {phrase: "Tu ne fais pas", expected: ["yap","m","ıyor","sun"]},
+    {phrase: "Je ne fais pas", expected: ["yap","m","ıyor","um"]},
+  'yap-pres-neg': [
+  ],
+    {phrase: "Ils/Elles font", expected: ["yap","ıyor","lar"]}
+    {phrase: "Vous faites", expected: ["yap","ıyor","sunuz"]},
+    {phrase: "Nous faisons", expected: ["yap","ıyor","uz"]},
+    {phrase: "Il/Elle fait", expected: ["yap","ıyor"]},
+    {phrase: "Tu fais", expected: ["yap","ıyor","sun"]},
+    {phrase: "Je fais", expected: ["yap","ıyor","um"]},
+  'yap-pres-aff': [
+  ],
+    {phrase: "Ils/Elles ne vont pas venir", expected: ["gel","me","y","ece","k","ler"]}
+    {phrase: "Vous n'allez pas venir", expected: ["gel","me","y","ece","k","siniz"]},
+    {phrase: "Nous n'allons pas venir", expected: ["gel","me","y","ece","ğ","iz"]},
+    {phrase: "Il/Elle ne va pas venir", expected: ["gel","me","y","ece","k"]},
+    {phrase: "Tu ne vas pas venir", expected: ["gel","me","y","ece","k","sin"]},
+    {phrase: "Je ne vais pas venir", expected: ["gel","me","y","ece","ğ","im"]},
+  'gel-fut-neg': [
+  ],
+    {phrase: "Ils/Elles vont venir", expected: ["gel","ece","k","ler"]}
+    {phrase: "Vous allez venir", expected: ["gel","ece","k","siniz"]},
+    {phrase: "Nous allons venir", expected: ["gel","ece","ğ","iz"]},
+    {phrase: "Il/Elle va venir", expected: ["gel","ece","k"]},
+    {phrase: "Tu vas venir", expected: ["gel","ece","k","sin"]},
+    {phrase: "Je vais venir", expected: ["gel","ece", "ğ","im"]},
+  'gel-fut-aff': [
+  ],
+    {phrase: "Ils/Elles ne sont pas venu(e)s", expected: ["gel","me","di","lar"]}
+    {phrase: "Vous n'êtes pas venu(e)(s)", expected: ["gel","me","di","nız"]},
+    {phrase: "Nous ne sommes pas venu(e)s", expected: ["gel","me","di","k"]},
+    {phrase: "Il/Elle n'est pas venu(e)", expected: ["gel","me","di"]},
+    {phrase: "Tu n'es pas venu(e)", expected: ["gel","me","di","n"]},
+    {phrase: "Je ne suis pas venu(e)", expected: ["gel","me","di","m"]},
+  'gel-past-neg': [
+  ],
+    {phrase: "Ils/Elles sont venu(e)s", expected: ["gel","di","ler"]}
+    {phrase: "Vous êtes venu(e)(s)", expected: ["gel","di","nız"]},
+    {phrase: "Nous sommes venu(e)s", expected: ["gel","di","k"]},
+    {phrase: "Il/Elle est venu(e)", expected: ["gel","di"]},
+    {phrase: "Tu es venu(e)", expected: ["gel","di","n"]},
+    {phrase: "Je suis venu(e)", expected: ["gel","di","m"]},
+  'gel-past-aff': [
+  ],
+    {phrase: "Ils/Elles ne viennent pas", expected: ["gel","m","iyor","lar"]}
+    {phrase: "Vous ne venez pas", expected: ["gel","m","iyor","sunuz"]},
+    {phrase: "Nous ne venons pas", expected: ["gel","m","iyor","uz"]},
+    {phrase: "Il/Elle ne vient pas", expected: ["gel","m","iyor"]},
+    {phrase: "Tu ne viens pas", expected: ["gel","m","iyor","sun"]},
+    {phrase: "Je ne viens pas", expected: ["gel","m","iyor","um"]},
+  'gel-pres-neg': [
+  ],
+    {phrase: "Ils/Elles viennent", expected: ["gel","iyor","lar"]}
+    {phrase: "Vous venez", expected: ["gel","iyor","sunuz"]},
+    {phrase: "Nous venons", expected: ["gel","iyor","uz"]},
+    {phrase: "Il/Elle vient", expected: ["gel","iyor"]},
+    {phrase: "Tu viens", expected: ["gel","iyor","sun"]},
+    {phrase: "Je viens", expected: ["gel","iyor","um"]},
+  'gel-pres-aff': [
+  ],
+    {phrase: "Ils/Elles ne vont pas comprendre", expected: ["anla","ma","y","aca","k","lar"]}
+    {phrase: "Vous n'allez pas comprendre", expected: ["anla","ma","y","aca","k","sınız"]},
+    {phrase: "Nous n'allons pas comprendre", expected: ["anla","ma","y","aca","ğ","ız"]},
+    {phrase: "Il/Elle ne va pas comprendre", expected: ["anla","ma","y","aca","k"]},
+    {phrase: "Tu ne vas pas comprendre", expected: ["anla","ma","y","aca","k","sın"]},
+    {phrase: "Je ne vais pas comprendre", expected: ["anla","ma","y","aca","ğ","ım"]},
+  'anla-fut-neg': [
+  ],
+    {phrase: "Ils/Elles vont comprendre", expected: ["anla","y","aca","k","lar"]}
+    {phrase: "Vous allez comprendre", expected: ["anla","y","aca","k","sınız"]},
+    {phrase: "Nous allons comprendre", expected: ["anla","y","aca","ğ","ız"]},
+    {phrase: "Il/Elle va comprendre", expected: ["anla","y","aca", "k"]},
+    {phrase: "Tu vas comprendre", expected: ["anla","y","aca","k","sın"]},
+    {phrase: "Je vais comprendre", expected: ["anla","y","aca","ğ", "ım"]},
+  'anla-fut-aff': [
+  ],
+    {phrase: "Ils/Elles n'ont pas compris", expected: ["anla","ma","dı","lar"]}
+    {phrase: "Vous n'avez pas compris", expected: ["anla","ma","dı","nız"]},
+    {phrase: "Nous n'avons pas compris", expected: ["anla","ma","dı","k"]},
+    {phrase: "Il/Elle n'a pas compris", expected: ["anla","ma","dı"]},
+    {phrase: "Tu n'as pas compris", expected: ["anla","ma","dı","n"]},
+    {phrase: "Je n'ai pas compris", expected: ["anla","ma","dı","m"]},
+  'anla-past-neg': [
+  ],
+    {phrase: "Ils/Elles ont compris", expected: ["anla","dı","lar"]}
+    {phrase: "Vous avez compris", expected: ["anla","dı","nız"]},
+    {phrase: "Nous avons compris", expected: ["anla","dı","k"]},
+    {phrase: "Il/Elle a compris", expected: ["anla","dı"]},
+    {phrase: "Tu as compris", expected: ["anla","dı","n"]},
+    {phrase: "J'ai compris", expected: ["anla","dı","m"]},
+  'anla-past-aff': [
+  ],
+    {phrase: "Ils/Elles ne comprennent pas", expected: ["anla","m","ıyor","lar"]}
+    {phrase: "Vous ne comprenez pas", expected: ["anla","m","ıyor","sunuz"]},
+    {phrase: "Nous ne comprenons pas", expected: ["anla","m","ıyor","uz"]},
+    {phrase: "Il/Elle ne comprend pas", expected: ["anla","m","yor"]},
+    {phrase: "Tu ne comprends pas", expected: ["anla","m","ıyor","sun"]},
+    {phrase: "Je ne comprends pas", expected: ["anla","m","ıyor","um"]},
+  'anla-pres-neg': [
+  ],
+    {phrase: "Ils/Elles comprennent", expected: ["anl","ıyor","lar"]}
+    {phrase: "Vous comprenez", expected: ["anl","ıyor","sunuz"]},
+    {phrase: "Nous comprenons", expected: ["anl","ıyor","uz"]},
+    {phrase: "Il/Elle comprend", expected: ["anl","ıyor"]},
+    {phrase: "Tu comprends", expected: ["anl","ıyor","sun"]},
+    {phrase: "Je comprends", expected: ["anl","ıyor","um"]},
+  'anla-pres-aff': [
+const phrases = {
+<script>
+
+</footer>
+  <div class="small"><strong>Rappels :</strong> ordre = radical + négation éventuelle + marqueur de temps + terminaison personnelle. Harmonies vocaliques et liaisons (<em>y/ye</em>) peuvent modifier l’orthographe finale ; l’exercice évalue l’ordre morphologique.</div>
+<footer>
+
+</div>
+  <p><strong>Lettres de liaison :</strong> Ajouter "y" entre deux voyelles radical/suffixes. Par exemple : anla-y-acak.</p>
+  <p><strong>Chute des voyelles :</strong> Dans la négation, le a/e de -ma/-me tombe devant une voyelle : anla-ma-iyor = anlam-iyor. Pour le présent, la voyelle du radical peut tomber : anla-iyor = anl-iyor.</p>
+  <p><strong>Consonnes k/ğ :</strong> Pour certains verbes comme istemek, le radical change : iste- + -yecek = istiyecek (k devient ğ pour liaison).</p>
+  <p><strong>Harmonie vocalique :</strong> Les voyelles des suffixes s'harmonisent avec la voyelle précédente. Après a, ı, o, u : suffixes avec a, ı, o, u. Après e, i, ö, ü : suffixes avec e, i, ö, ü. Par exemple, après e : -iyor devient -iyor (i).</p>
+  <h3>Rappels des règles de conjugaison turque</h3>
+<h1>Exercice : placer <em>radical</em> + suffixes</h1>
+</html>
+<!doctype html>
+</html>
+<div id="rules">
+
+</div>
+  </div>
+    </div>
+      </div>
+        <div class="pill" draggable="true" data-id="k">-k</div>
+        <div class="pill" draggable="true" data-id="ğ">-ğ</div>
+        <div class="pill" draggable="true" data-id="ye">‑ye</div>
+        <div class="pill" draggable="true" data-id="y">‑y</div>
+        <div class="pill" draggable="true" data-id="lar">‑lar</div>
+        <div class="pill" draggable="true" data-id="ler">‑ler</div>
+      <div class="pill" draggable="true" data-id="k">‑k</div>
+        <div class="pill" draggable="true" data-id="n">‑n</div>
+        <div class="pill" draggable="true" data-id="m">‑m</div>
+        <div class="pill" draggable="true" data-id="sünüz">‑sünüz</div>
+        <div class="pill" draggable="true" data-id="sunuz">‑sunuz</div>
+        <div class="pill" draggable="true" data-id="siniz">‑siniz</div>
+        <div class="pill" draggable="true" data-id="sınız">‑sınız</div>
+        <div class="pill" draggable="true" data-id="üz">‑üz</div>
+        <div class="pill" draggable="true" data-id="iz">‑iz</div>
+        <div class="pill" draggable="true" data-id="uz">‑uz</div>
+        <div class="pill" draggable="true" data-id="ız">‑ız</div>
+        <div class="pill" draggable="true" data-id="sün">‑sün</div>
+        <div class="pill" draggable="true" data-id="sın">‑sın</div>
+        <div class="pill" draggable="true" data-id="sin">‑sin</div>
+        <div class="pill" draggable="true" data-id="sun">‑sun</div>
+        <div class="pill" draggable="true" data-id="im">‑im</div>
+        <div class="pill" draggable="true" data-id="üm">‑üm</div>
+        <div class="pill" draggable="true" data-id="ım">‑ım</div>
+        <div class="pill" draggable="true" data-id="um">‑um</div>
+      <div class="pool">
+      <h3>Terminaisons</h3>
+    <div class="suffix-section">
+    </div>
+      </div>
+        <div class="pill" draggable="true" data-id="yece">-yece</div>
+        <div class="pill" draggable="true" data-id="yaca">-yaca</div>
+       <div class="pill" draggable="true" data-id="aca">-aca</div>
+        <div class="pill" draggable="true" data-id="ece">-ece</div>
+        <div class="pill" draggable="true" data-id="tü">-tü</div>
+        <div class="pill" draggable="true" data-id="tu">-tu</div>
+        <div class="pill" draggable="true" data-id="ti">-ti</div>
+        <div class="pill" draggable="true" data-id="tı">-tı</div>
+        <div class="pill" draggable="true" data-id="dı">-dı</div>
+        <div class="pill" draggable="true" data-id="di">-di</div>
+        <div class="pill" draggable="true" data-id="uyor">‑uyor</div>
+        <div class="pill" draggable="true" data-id="ıyor">‑ıyor</div>
+        <div class="pill" draggable="true" data-id="iyor">‑iyor</div>
+      <div class="pool">
+      <h3>Temps</h3>
+    <div class="suffix-section">
+    </div>
+      </div>
+        <div class="pill" draggable="true" data-id="m">-m</div>
+        <div class="pill" draggable="true" data-id="me">-me</div>
+        <div class="pill" draggable="true" data-id="ma">-ma</div>
+      <div class="pool">
+      <h3>Négation</h3>
+    <div class="suffix-section">
+    </div>
+      </div>
+        <div class="pill" draggable="true" data-id="ist">ist-</div>
+        <div class="pill" draggable="true" data-id="iste">iste-</div>
+        <div class="pill" draggable="true" data-id="konus">konuş-</div>
+        <div class="pill" draggable="true" data-id="yap">yap-</div>
+        <div class="pill" draggable="true" data-id="gel">gel-</div>
+        <div class="pill" draggable="true" data-id="anl">anl-</div>
+        <div class="pill" draggable="true" data-id="anla">anla-</div>
+      <div class="pool">
+      <h3>Radicaux</h3>
+    <div class="suffix-section">
+    <h2 style="margin:0 0 8px 0">Parties à glisser</h2>
+  <div class="panel">
+
+  </div>
+    <div id="result" style="margin-top:10px;font-weight:700;text-align:center"></div>
+    </div>
+      <button id="rulesBtn">Rappels de règles grammaticales</button>
+      <button id="reset" class="clear">Réinitialiser</button>
+      <button id="generate" class="clear">Générer nouvelle phrase</button>
+      <button id="check">Vérifier</button>
+    <div class="flex">
+    </div>
+      <div class="drop" data-expected='[]'>6</div>
+      <div class="drop" data-expected='[]'>5</div>
+      <div class="drop" data-expected='[]'>4</div>
+      <div class="drop" data-expected='["um"]'>3</div>
+      <div class="drop" data-expected='["ıyor"]'>2</div>
+      <div class="drop" data-expected='["anl"]'>1</div>
+    <div class="targets" id="targets">
+    <div id="person" style="font-weight: bold; margin-bottom: 10px;">ben</div>
+    </div>
+      <strong id="phrase">Je comprends</strong>
+      <h2>Phrase à traduire</h2>
+    <div class="phrase-section">
+  <div class="panel">
+<div class="grid">
+</div>
+  <div style="margin-top:6px" class="hint">Rappelez-vous : ordre général = <strong>radical + négation + marqueur de temps (iyor / di / ecek) + suffixe personnel</strong>. Toutes les cases ne doivent pas forcément être remplies. Attention aux voyelles qui tombent : par exemple, anla-ma-iyor-um devient anlamıyorum (le "a" de la négation tombe).</div>
+  <div class="small"><strong>Consigne :</strong> pour la phrase française donnée, glissez les morceaux (radical / négation / temps / terminaison) dans les cases dans l'ordre correct pour former la traduction turque.</div>
+<div class="instructions">
+<h1>Exercice : Traduction d'une phrase française en turc</h1>
+<body>
+</head>
+
+
+</style>
+  .row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #eee}
+  #rules h3{margin-top:0}
+  #rules{display:none;background:#fff;border:1px solid #ddd;padding:20px;margin:20px auto;max-width:600px;border-radius:8px;text-align:left}
+  .clear{background:#e2e8f0;color:#111}
+  .flex{display:flex;gap:8px;align-items:center;justify-content:center}
+  footer{margin-top:14px;font-size:13px;color:#444;text-align:center}
+  .hint{font-size:13px;color:#333}
+  .bad{color:#c53030;font-weight:700}
+  .ok{color:green;font-weight:700}
+  button{background:#2b6cb0;color:#fff;padding:8px 12px;border-radius:6px;border:0;cursor:pointer;margin:5px}
+  .small{font-size:13px;color:#555}
+  .drop.filled{border-style:solid;background:#e6fffa}
+  .drop{min-width:110px;height:36px;border:2px dashed #cbd5e1;border-radius:6px;padding:4px;display:flex;align-items:center;justify-content:center;background:#fbfdff}
+  .pill{background:#eef2ff;border:1px solid #d6defe;padding:6px 8px;border-radius:6px;cursor:grab}
+  .pool{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .suffix-section h3{margin:0 0 5px 0;font-size:14px;text-align:center}
+  .suffix-section{margin-bottom:15px}
+  .targets{display:flex;gap:6px;margin-bottom:20px;justify-content:center}
+  #person{font-size:18px;margin-bottom:10px;font-weight:bold;text-align:center}
+  #phrase{font-size:24px;font-weight:bold}
+  .phrase-section{margin-bottom:20px;text-align:center}
+  .panel{background:#fff;padding:12px;border-radius:8px;box-shadow:0 1px 0 rgba(0,0,0,0.04)}
+  .grid{display:grid;grid-template-columns:2fr 1fr;gap:20px}
+  .instructions{background:#fff;border-left:4px solid #2b6cb0;padding:10px;margin-bottom:12px;text-align:center}
+  h1{font-size:20px;margin-bottom:6px;text-align:center}
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;line-height:1.4;padding:18px;background:#f7f8fb;color:#111}
+<style>
+<title> Conjugaison : anlamak, gelmek, yapmak, konuşmak, istemek</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="utf-8" />
+<head>
+<html lang="fr">
+<!doctype html>
+</html>
+<!doctype html>
 <html lang="fr">
 <head>
 <meta charset="utf-8" />
@@ -30,7 +472,7 @@
   .clear{background:#e2e8f0;color:#111}
   #rules{display:none;background:#fff;border:1px solid #ddd;padding:20px;margin:20px auto;max-width:600px;border-radius:8px;text-align:left}
   #rules h3{margin-top:0}
-</style>
+  .row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #eee}
 </style>
 
 
@@ -126,10 +568,7 @@
         <div class="pill" draggable="true" data-id="sünüz">‑sünüz</div>
         <div class="pill" draggable="true" data-id="m">‑m</div>
         <div class="pill" draggable="true" data-id="n">‑n</div>
-        <div class="pill" draggable="true" data-id="uk">‑uk</div>
-        <div class="pill" draggable="true" data-id="ık">‑ık</div>
-        <div class="pill" draggable="true" data-id="ik">‑ik</div>
-        <div class="pill" draggable="true" data-id="ük">‑ük</div>
+      <div class="pill" draggable="true" data-id="k">‑k</div>
         <div class="pill" draggable="true" data-id="ler">‑ler</div>
         <div class="pill" draggable="true" data-id="lar">‑lar</div>
         <div class="pill" draggable="true" data-id="y">‑y</div>
@@ -184,7 +623,7 @@ const phrases = {
     {phrase: "Tu n'as pas compris", expected: ["anla","ma","dı","n"]},
     {phrase: "Il/Elle n'a pas compris", expected: ["anla","ma","dı"]},
     {phrase: "Nous n'avons pas compris", expected: ["anla","ma","dı","k"]},
-    {phrase: "Vous n'avez pas compris", expected: ["anla","ma","dı","niz"]},
+    {phrase: "Vous n'avez pas compris", expected: ["anla","ma","dı","nız"]},
     {phrase: "Ils/Elles n'ont pas compris", expected: ["anla","ma","dı","lar"]}
   ],
   'anla-fut-aff': [
@@ -193,15 +632,15 @@ const phrases = {
     {phrase: "Il/Elle va comprendre", expected: ["anla","y","aca", "k"]},
     {phrase: "Nous allons comprendre", expected: ["anla","y","aca","ğ","ız"]},
     {phrase: "Vous allez comprendre", expected: ["anla","y","aca","k","sınız"]},
-    {phrase: "Ils/Elles allons comprendre", expected: ["anla","y","aca","k","lar"]}
+    {phrase: "Ils/Elles vont comprendre", expected: ["anla","y","aca","k","lar"]}
   ],
   'anla-fut-neg': [
     {phrase: "Je ne vais pas comprendre", expected: ["anla","ma","y","aca","ğ","ım"]},
     {phrase: "Tu ne vas pas comprendre", expected: ["anla","ma","y","aca","k","sın"]},
     {phrase: "Il/Elle ne va pas comprendre", expected: ["anla","ma","y","aca","k"]},
-    {phrase: "Nous ne allons pas comprendre", expected: ["anla","ma","y","aca","ğ","ız"]},
-    {phrase: "Vous ne allez pas comprendre", expected: ["anla","ma","y","aca","k","sınız"]},
-    {phrase: "Ils/Elles ne allons pas comprendre", expected: ["anla","ma","y","aca","k","lar"]}
+    {phrase: "Nous n'allons pas comprendre", expected: ["anla","ma","y","aca","ğ","ız"]},
+    {phrase: "Vous n'allez pas comprendre", expected: ["anla","ma","y","aca","k","sınız"]},
+    {phrase: "Ils/Elles ne vont pas comprendre", expected: ["anla","ma","y","aca","k","lar"]}
   ],
   'gel-pres-aff': [
     {phrase: "Je viens", expected: ["gel","iyor","um"]},
@@ -224,7 +663,7 @@ const phrases = {
     {phrase: "Tu es venu(e)", expected: ["gel","di","n"]},
     {phrase: "Il/Elle est venu(e)", expected: ["gel","di"]},
     {phrase: "Nous sommes venu(e)s", expected: ["gel","di","k"]},
-    {phrase: "Vous êtes venu(e)(s)", expected: ["gel","di","niz"]},
+    {phrase: "Vous êtes venu(e)(s)", expected: ["gel","di","nız"]},
     {phrase: "Ils/Elles sont venu(e)s", expected: ["gel","di","ler"]}
   ],
   'gel-past-neg': [
@@ -232,8 +671,8 @@ const phrases = {
     {phrase: "Tu n'es pas venu(e)", expected: ["gel","me","di","n"]},
     {phrase: "Il/Elle n'est pas venu(e)", expected: ["gel","me","di"]},
     {phrase: "Nous ne sommes pas venu(e)s", expected: ["gel","me","di","k"]},
-    {phrase: "Vous n'êtes pas venu(e)(s)", expected: ["gel","me","di","niz"]},
-    {phrase: "Ils/Elles ne sont pas venu(e)s", expected: ["gel","me","di","ler"]}
+    {phrase: "Vous n'êtes pas venu(e)(s)", expected: ["gel","me","di","nız"]},
+    {phrase: "Ils/Elles ne sont pas venu(e)s", expected: ["gel","me","di","lar"]}
   ],
   'gel-fut-aff': [
     {phrase: "Je vais venir", expected: ["gel","ece", "ğ","im"]},
@@ -244,12 +683,12 @@ const phrases = {
     {phrase: "Ils/Elles vont venir", expected: ["gel","ece","k","ler"]}
   ],
   'gel-fut-neg': [
-    {phrase: "Je ne vais pas venir", expected: ["gel","me","yece","ğ","im"]},
-    {phrase: "Tu ne vas pas venir", expected: ["gel","me","yece","k","sin"]},
-    {phrase: "Il/Elle ne va pas venir", expected: ["gel","me","yece","k"]},
-    {phrase: "Nous n'allons pas venir", expected: ["gel","me","yece","ğ","iz"]},
-    {phrase: "Vous ne venez pas venir", expected: ["gel","me","yece","k","siniz"]},
-    {phrase: "Ils/Elles ne viennent pas venir", expected: ["gel","me","yece","k","ler"]}
+    {phrase: "Je ne vais pas venir", expected: ["gel","me","y","ece","ğ","im"]},
+    {phrase: "Tu ne vas pas venir", expected: ["gel","me","y","ece","k","sin"]},
+    {phrase: "Il/Elle ne va pas venir", expected: ["gel","me","y","ece","k"]},
+    {phrase: "Nous n'allons pas venir", expected: ["gel","me","y","ece","ğ","iz"]},
+    {phrase: "Vous n'allez pas venir", expected: ["gel","me","y","ece","k","siniz"]},
+    {phrase: "Ils/Elles ne vont pas venir", expected: ["gel","me","y","ece","k","ler"]}
   ],
   'yap-pres-aff': [
     {phrase: "Je fais", expected: ["yap","ıyor","um"]},
@@ -281,7 +720,7 @@ const phrases = {
     {phrase: "Il/Elle n'a pas fait", expected: ["yap","ma","dı"]},
     {phrase: "Nous n'avons pas fait", expected: ["yap","ma","dı","k"]},
     {phrase: "Vous n'avez pas fait", expected: ["yap","ma","dı","nız"]},
-    {phrase: "Ils/Elles n'ont pas fait", expected: ["yap","ma","dı","ler"]}
+    {phrase: "Ils/Elles n'ont pas fait", expected: ["yap","ma","dı","lar"]}
   ],
   'yap-fut-aff': [
     {phrase: "Je vais faire", expected: ["yap","aca","ğ","ım"]},
@@ -295,8 +734,8 @@ const phrases = {
     {phrase: "Je ne vais pas faire", expected: ["yap","ma","y", "aca","ğ","ım"]},
     {phrase: "Tu ne vas pas faire", expected: ["yap","ma","y", "aca","k","sın"]},
     {phrase: "Il/Elle ne va pas faire", expected: ["yap","ma","y", "aca","k"]},
-    {phrase: "Nous ne allons pas faire", expected: ["yap","ma","y", "aca","ğ","ız"]},
-    {phrase: "Vous ne allez pas faire", expected: ["yap","ma","y", "aca","k","sınız"]},
+    {phrase: "Nous n'allons pas faire", expected: ["yap","ma","y", "aca","ğ","ız"]},
+    {phrase: "Vous n'allez pas faire", expected: ["yap","ma","y", "aca","k","sınız"]},
     {phrase: "Ils/Elles ne vont pas faire", expected: ["yap","ma","y", "aca","k","lar"]}
   ],
   'konus-pres-aff': [
@@ -343,8 +782,8 @@ const phrases = {
     {phrase: "Je ne vais pas parler", expected: ["konus","ma","yaca","ğ","ım"]},
     {phrase: "Tu ne vas pas parler", expected: ["konus","ma","yaca","k","sın"]},
     {phrase: "Il/Elle ne va pas parler", expected: ["konus","ma","yaca","k"]},
-    {phrase: "Nous ne allons pas parler", expected: ["konus","ma","yaca","ğ","ız"]},
-    {phrase: "Vous ne allez pas parler", expected: ["konus","ma","yaca","k","sınız"]},
+    {phrase: "Nous n'allons pas parler", expected: ["konus","ma","yaca","ğ","ız"]},
+    {phrase: "Vous n'allez pas parler", expected: ["konus","ma","yaca","k","sınız"]},
     {phrase: "Ils/Elles ne vont pas parler", expected: ["konus","ma","yaca","k","lar"]}
   ],
   'iste-pres-aff': [
@@ -376,8 +815,8 @@ const phrases = {
     {phrase: "Tu n'as pas voulu", expected: ["iste","me","di","n"]},
     {phrase: "Il/Elle n'a pas voulu", expected: ["iste","me","di"]},
     {phrase: "Nous n'avons pas voulu", expected: ["iste","me","di","k"]},
-    {phrase: "Vous n'avez pas voulu", expected: ["iste","me","di","niz"]},
-    {phrase: "Ils/Elles n'ont pas voulu", expected: ["iste","me","di","ler"]}
+    {phrase: "Vous n'avez pas voulu", expected: ["iste","me","di","nız"]},
+    {phrase: "Ils/Elles n'ont pas voulu", expected: ["iste","me","di","lar"]}
   ],
   'iste-fut-aff': [
     {phrase: "Je vais vouloir", expected: ["iste","yece","ğ", "im"]},
@@ -390,9 +829,9 @@ const phrases = {
   'iste-fut-neg': [
     {phrase: "Je ne vais pas vouloir", expected: ["iste","me","yece","ğ","im"]},
     {phrase: "Tu ne vas pas vouloir", expected: ["iste","me","yece","k","sin"]},
-    {phrase: "Il/Elle ne va pas vouloir", expected: ["iste","me","yece"]},
-    {phrase: "Nous ne allons pas vouloir", expected: ["iste","me","yece","ğ","iz"]},
-    {phrase: "Vous ne allez pas vouloir", expected: ["iste","me","yece","k","siniz"]},
+    {phrase: "Il/Elle ne va pas vouloir", expected: ["iste","me","yece","k"]},
+    {phrase: "Nous n'allons pas vouloir", expected: ["iste","me","yece","ğ","iz"]},
+    {phrase: "Vous n'allez pas vouloir", expected: ["iste","me","yece","k","siniz"]},
     {phrase: "Ils/Elles ne vont pas vouloir", expected: ["iste","me","yece","k","ler"]}
   ]
 };
@@ -433,6 +872,854 @@ document.addEventListener('dragstart', e=>{
     e.dataTransfer.setData('text/plain', e.target.dataset.id);
   }
 });
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title> Conjugaison : anlamak, gelmek, yapmak, konuşmak, istemek</title>
+<style>
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;line-height:1.4;padding:18px;background:#f7f8fb;color:#111}
+  h1{font-size:20px;margin-bottom:6px;text-align:center}
+  .instructions{background:#fff;border-left:4px solid #2b6cb0;padding:10px;margin-bottom:12px;text-align:center}
+  .grid{display:grid;grid-template-columns:2fr 1fr;gap:20px}
+  .panel{background:#fff;padding:12px;border-radius:8px;box-shadow:0 1px 0 rgba(0,0,0,0.04)}
+  .phrase-section{margin-bottom:20px;text-align:center}
+  #phrase{font-size:24px;font-weight:bold}
+  #person{font-size:18px;margin-bottom:10px;font-weight:bold;text-align:center}
+  .targets{display:flex;gap:6px;margin-bottom:20px;justify-content:center}
+  .suffix-section{margin-bottom:15px}
+  .suffix-section h3{margin:0 0 5px 0;font-size:14px;text-align:center}
+  .pool{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .pill{background:#eef2ff;border:1px solid #d6defe;padding:6px 8px;border-radius:6px;cursor:grab}
+  .drop{min-width:110px;height:36px;border:2px dashed #cbd5e1;border-radius:6px;padding:4px;display:flex;align-items:center;justify-content:center;background:#fbfdff}
+  .drop.filled{border-style:solid;background:#e6fffa}
+  .small{font-size:13px;color:#555}
+  button{background:#2b6cb0;color:#fff;padding:8px 12px;border-radius:6px;border:0;cursor:pointer;margin:5px}
+  .ok{color:green;font-weight:700}
+  .bad{color:#c53030;font-weight:700}
+  .hint{font-size:13px;color:#333}
+  footer{margin-top:14px;font-size:13px;color:#444;text-align:center}
+  .flex{display:flex;gap:8px;align-items:center;justify-content:center}
+  .clear{background:#e2e8f0;color:#111}
+  #rules{display:none;background:#fff;border:1px solid #ddd;padding:20px;margin:20px auto;max-width:600px;border-radius:8px;text-align:left}
+  #rules h3{margin-top:0}
+  .row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #eee}
+</style>
+
+
+</head>
+<body>
+<h1>Exercice : Traduction d'une phrase française en turc</h1>
+<div class="instructions">
+  <div class="small"><strong>Consigne :</strong> pour la phrase française donnée, glissez les morceaux (radical / négation / temps / terminaison) dans les cases dans l'ordre correct pour former la traduction turque.</div>
+  <div style="margin-top:6px" class="hint">Rappelez-vous : ordre général = <strong>radical + négation + marqueur de temps (iyor / di / ecek) + suffixe personnel</strong>. Toutes les cases ne doivent pas forcément être remplies. Attention aux voyelles qui tombent : par exemple, anla-ma-iyor-um devient anlamıyorum (le "a" de la négation tombe).</div>
+</div>
+<div class="grid">
+  <div class="panel">
+    <div class="phrase-section">
+      <h2>Phrase à traduire</h2>
+      <strong id="phrase">Je comprends</strong>
+    </div>
+    <div id="person" style="font-weight: bold; margin-bottom: 10px;">ben</div>
+    <div class="targets" id="targets">
+      <div class="drop" data-expected='["anl"]'>1</div>
+      <div class="drop" data-expected='["ıyor"]'>2</div>
+      <div class="drop" data-expected='["um"]'>3</div>
+      <div class="drop" data-expected='[]'>4</div>
+      <div class="drop" data-expected='[]'>5</div>
+      <div class="drop" data-expected='[]'>6</div>
+    </div>
+    <div class="flex">
+      <button id="check">Vérifier</button>
+      <button id="generate" class="clear">Générer nouvelle phrase</button>
+      <button id="reset" class="clear">Réinitialiser</button>
+      <button id="rulesBtn">Rappels de règles grammaticales</button>
+    </div>
+    <div id="result" style="margin-top:10px;font-weight:700;text-align:center"></div>
+  </div>
+
+  <div class="panel">
+    <h2 style="margin:0 0 8px 0">Parties à glisser</h2>
+    <div class="suffix-section">
+      <h3>Radicaux</h3>
+      <div class="pool">
+        <div class="pill" draggable="true" data-id="anla">anla-</div>
+        <div class="pill" draggable="true" data-id="anl">anl-</div>
+        <div class="pill" draggable="true" data-id="gel">gel-</div>
+        <div class="pill" draggable="true" data-id="yap">yap-</div>
+        <div class="pill" draggable="true" data-id="konus">konuş-</div>
+        <div class="pill" draggable="true" data-id="iste">iste-</div>
+        <div class="pill" draggable="true" data-id="ist">ist-</div>
+      </div>
+    </div>
+    <div class="suffix-section">
+      <h3>Négation</h3>
+      <div class="pool">
+        <div class="pill" draggable="true" data-id="ma">-ma</div>
+        <div class="pill" draggable="true" data-id="me">-me</div>
+        <div class="pill" draggable="true" data-id="m">-m</div>
+      </div>
+    </div>
+    <div class="suffix-section">
+      <h3>Temps</h3>
+      <div class="pool">
+        <div class="pill" draggable="true" data-id="iyor">‑iyor</div>
+        <div class="pill" draggable="true" data-id="ıyor">‑ıyor</div>
+        <div class="pill" draggable="true" data-id="uyor">‑uyor</div>
+        <div class="pill" draggable="true" data-id="di">-di</div>
+        <div class="pill" draggable="true" data-id="dı">-dı</div>
+        <div class="pill" draggable="true" data-id="tı">-tı</div>
+        <div class="pill" draggable="true" data-id="ti">-ti</div>
+        <div class="pill" draggable="true" data-id="tu">-tu</div>
+        <div class="pill" draggable="true" data-id="tü">-tü</div>
+        <div class="pill" draggable="true" data-id="ece">-ece</div>
+       <div class="pill" draggable="true" data-id="aca">-aca</div>
+        <div class="pill" draggable="true" data-id="yaca">-yaca</div>
+        <div class="pill" draggable="true" data-id="yece">-yece</div>
+      </div>
+    </div>
+    <div class="suffix-section">
+      <h3>Terminaisons</h3>
+      <div class="pool">
+        <div class="pill" draggable="true" data-id="um">‑um</div>
+        <div class="pill" draggable="true" data-id="ım">‑ım</div>
+        <div class="pill" draggable="true" data-id="üm">‑üm</div>
+        <div class="pill" draggable="true" data-id="im">‑im</div>
+        <div class="pill" draggable="true" data-id="sun">‑sun</div>
+        <div class="pill" draggable="true" data-id="sin">‑sin</div>
+        <div class="pill" draggable="true" data-id="sın">‑sın</div>
+        <div class="pill" draggable="true" data-id="sün">‑sün</div>
+        <div class="pill" draggable="true" data-id="ız">‑ız</div>
+        <div class="pill" draggable="true" data-id="uz">‑uz</div>
+        <div class="pill" draggable="true" data-id="iz">‑iz</div>
+        <div class="pill" draggable="true" data-id="üz">‑üz</div>
+        <div class="pill" draggable="true" data-id="sınız">‑sınız</div>
+        <div class="pill" draggable="true" data-id="siniz">‑siniz</div>
+        <div class="pill" draggable="true" data-id="sunuz">‑sunuz</div>
+        <div class="pill" draggable="true" data-id="sünüz">‑sünüz</div>
+        <div class="pill" draggable="true" data-id="m">‑m</div>
+        <div class="pill" draggable="true" data-id="n">‑n</div>
+      <div class="pill" draggable="true" data-id="k">‑k</div>
+        <div class="pill" draggable="true" data-id="ler">‑ler</div>
+        <div class="pill" draggable="true" data-id="lar">‑lar</div>
+        <div class="pill" draggable="true" data-id="y">‑y</div>
+        <div class="pill" draggable="true" data-id="ye">‑ye</div>
+        <div class="pill" draggable="true" data-id="ğ">-ğ</div>
+        <div class="pill" draggable="true" data-id="k">-k</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="rules">
+  <h3>Rappels des règles de conjugaison turque</h3>
+  <p><strong>Harmonie vocalique :</strong> Les voyelles des suffixes s'harmonisent avec la voyelle précédente. Après a, ı, o, u : suffixes avec a, ı, o, u. Après e, i, ö, ü : suffixes avec e, i, ö, ü. Par exemple, après e : -iyor devient -iyor (i).</p>
+  <p><strong>Consonnes k/ğ :</strong> Pour certains verbes comme istemek, le radical change : iste- + -yecek = istiyecek (k devient ğ pour liaison).</p>
+  <p><strong>Chute des voyelles :</strong> Dans la négation, le a/e de -ma/-me tombe devant une voyelle : anla-ma-iyor = anlam-iyor. Pour le présent, la voyelle du radical peut tomber : anla-iyor = anl-iyor.</p>
+  <p><strong>Lettres de liaison :</strong> Ajouter "y" entre deux voyelles radical/suffixes. Par exemple : anla-y-acak.</p>
+</div>
+
+<footer>
+  <div class="small"><strong>Rappels :</strong> ordre = radical + négation éventuelle + marqueur de temps + terminaison personnelle. Harmonies vocaliques et liaisons (<em>y/ye</em>) peuvent modifier l’orthographe finale ; l’exercice évalue l’ordre morphologique.</div>
+</footer>
+
+<script>
+const phrases = {
+  'anla-pres-aff': [
+    {phrase: "Je comprends", expected: ["anl","ıyor","um"]},
+    {phrase: "Tu comprends", expected: ["anl","ıyor","sun"]},
+    {phrase: "Il/Elle comprend", expected: ["anl","ıyor"]},
+    {phrase: "Nous comprenons", expected: ["anl","ıyor","uz"]},
+    {phrase: "Vous comprenez", expected: ["anl","ıyor","sunuz"]},
+    {phrase: "Ils/Elles comprennent", expected: ["anl","ıyor","lar"]}
+  ],
+  'anla-pres-neg': [
+    {phrase: "Je ne comprends pas", expected: ["anla","m","ıyor","um"]},
+    {phrase: "Tu ne comprends pas", expected: ["anla","m","ıyor","sun"]},
+    {phrase: "Il/Elle ne comprend pas", expected: ["anla","m","yor"]},
+    {phrase: "Nous ne comprenons pas", expected: ["anla","m","ıyor","uz"]},
+    {phrase: "Vous ne comprenez pas", expected: ["anla","m","ıyor","sunuz"]},
+    {phrase: "Ils/Elles ne comprennent pas", expected: ["anla","m","ıyor","lar"]}
+  ],
+  'anla-past-aff': [
+    {phrase: "J'ai compris", expected: ["anla","dı","m"]},
+    {phrase: "Tu as compris", expected: ["anla","dı","n"]},
+    {phrase: "Il/Elle a compris", expected: ["anla","dı"]},
+    {phrase: "Nous avons compris", expected: ["anla","dı","k"]},
+    {phrase: "Vous avez compris", expected: ["anla","dı","nız"]},
+    {phrase: "Ils/Elles ont compris", expected: ["anla","dı","lar"]}
+  ],
+  'anla-past-neg': [
+    {phrase: "Je n'ai pas compris", expected: ["anla","ma","dı","m"]},
+    {phrase: "Tu n'as pas compris", expected: ["anla","ma","dı","n"]},
+    {phrase: "Il/Elle n'a pas compris", expected: ["anla","ma","dı"]},
+    {phrase: "Nous n'avons pas compris", expected: ["anla","ma","dı","k"]},
+    {phrase: "Vous n'avez pas compris", expected: ["anla","ma","dı","nız"]},
+    {phrase: "Ils/Elles n'ont pas compris", expected: ["anla","ma","dı","lar"]}
+  ],
+  'anla-fut-aff': [
+    {phrase: "Je vais comprendre", expected: ["anla","y","aca","ğ", "ım"]},
+    {phrase: "Tu vas comprendre", expected: ["anla","y","aca","k","sın"]},
+    {phrase: "Il/Elle va comprendre", expected: ["anla","y","aca", "k"]},
+    {phrase: "Nous allons comprendre", expected: ["anla","y","aca","ğ","ız"]},
+    {phrase: "Vous allez comprendre", expected: ["anla","y","aca","k","sınız"]},
+    {phrase: "Ils/Elles vont comprendre", expected: ["anla","y","aca","k","lar"]}
+  ],
+  'anla-fut-neg': [
+    {phrase: "Je ne vais pas comprendre", expected: ["anla","ma","y","aca","ğ","ım"]},
+    {phrase: "Tu ne vas pas comprendre", expected: ["anla","ma","y","aca","k","sın"]},
+    {phrase: "Il/Elle ne va pas comprendre", expected: ["anla","ma","y","aca","k"]},
+    {phrase: "Nous n'allons pas comprendre", expected: ["anla","ma","y","aca","ğ","ız"]},
+    {phrase: "Vous n'allez pas comprendre", expected: ["anla","ma","y","aca","k","sınız"]},
+    {phrase: "Ils/Elles ne vont pas comprendre", expected: ["anla","ma","y","aca","k","lar"]}
+  ],
+  'gel-pres-aff': [
+    {phrase: "Je viens", expected: ["gel","iyor","um"]},
+    {phrase: "Tu viens", expected: ["gel","iyor","sun"]},
+    {phrase: "Il/Elle vient", expected: ["gel","iyor"]},
+    {phrase: "Nous venons", expected: ["gel","iyor","uz"]},
+    {phrase: "Vous venez", expected: ["gel","iyor","sunuz"]},
+    {phrase: "Ils/Elles viennent", expected: ["gel","iyor","lar"]}
+  ],
+  'gel-pres-neg': [
+    {phrase: "Je ne viens pas", expected: ["gel","m","iyor","um"]},
+    {phrase: "Tu ne viens pas", expected: ["gel","m","iyor","sun"]},
+    {phrase: "Il/Elle ne vient pas", expected: ["gel","m","iyor"]},
+    {phrase: "Nous ne venons pas", expected: ["gel","m","iyor","uz"]},
+    {phrase: "Vous ne venez pas", expected: ["gel","m","iyor","sunuz"]},
+    {phrase: "Ils/Elles ne viennent pas", expected: ["gel","m","iyor","lar"]}
+  ],
+  'gel-past-aff': [
+    {phrase: "Je suis venu(e)", expected: ["gel","di","m"]},
+    {phrase: "Tu es venu(e)", expected: ["gel","di","n"]},
+    {phrase: "Il/Elle est venu(e)", expected: ["gel","di"]},
+    {phrase: "Nous sommes venu(e)s", expected: ["gel","di","k"]},
+    {phrase: "Vous êtes venu(e)(s)", expected: ["gel","di","nız"]},
+    {phrase: "Ils/Elles sont venu(e)s", expected: ["gel","di","ler"]}
+  ],
+  'gel-past-neg': [
+    {phrase: "Je ne suis pas venu(e)", expected: ["gel","me","di","m"]},
+    {phrase: "Tu n'es pas venu(e)", expected: ["gel","me","di","n"]},
+    {phrase: "Il/Elle n'est pas venu(e)", expected: ["gel","me","di"]},
+    {phrase: "Nous ne sommes pas venu(e)s", expected: ["gel","me","di","k"]},
+    {phrase: "Vous n'êtes pas venu(e)(s)", expected: ["gel","me","di","nız"]},
+    {phrase: "Ils/Elles ne sont pas venu(e)s", expected: ["gel","me","di","lar"]}
+  ],
+  'gel-fut-aff': [
+    {phrase: "Je vais venir", expected: ["gel","ece", "ğ","im"]},
+    {phrase: "Tu vas venir", expected: ["gel","ece","k","sin"]},
+    {phrase: "Il/Elle va venir", expected: ["gel","ece","k"]},
+    {phrase: "Nous allons venir", expected: ["gel","ece","ğ","iz"]},
+    {phrase: "Vous allez venir", expected: ["gel","ece","k","siniz"]},
+    {phrase: "Ils/Elles vont venir", expected: ["gel","ece","k","ler"]}
+  ],
+  'gel-fut-neg': [
+    {phrase: "Je ne vais pas venir", expected: ["gel","me","y","ece","ğ","im"]},
+    {phrase: "Tu ne vas pas venir", expected: ["gel","me","y","ece","k","sin"]},
+    {phrase: "Il/Elle ne va pas venir", expected: ["gel","me","y","ece","k"]},
+    {phrase: "Nous n'allons pas venir", expected: ["gel","me","y","ece","ğ","iz"]},
+    {phrase: "Vous n'allez pas venir", expected: ["gel","me","y","ece","k","siniz"]},
+    {phrase: "Ils/Elles ne vont pas venir", expected: ["gel","me","y","ece","k","ler"]}
+  ],
+  'yap-pres-aff': [
+    {phrase: "Je fais", expected: ["yap","ıyor","um"]},
+    {phrase: "Tu fais", expected: ["yap","ıyor","sun"]},
+    {phrase: "Il/Elle fait", expected: ["yap","ıyor"]},
+    {phrase: "Nous faisons", expected: ["yap","ıyor","uz"]},
+    {phrase: "Vous faites", expected: ["yap","ıyor","sunuz"]},
+    {phrase: "Ils/Elles font", expected: ["yap","ıyor","lar"]}
+  ],
+  'yap-pres-neg': [
+    {phrase: "Je ne fais pas", expected: ["yap","m","ıyor","um"]},
+    {phrase: "Tu ne fais pas", expected: ["yap","m","ıyor","sun"]},
+    {phrase: "Il/Elle ne fait pas", expected: ["yap","m","ıyor"]},
+    {phrase: "Nous ne faisons pas", expected: ["yap","m","ıyor","uz"]},
+    {phrase: "Vous ne faites pas", expected: ["yap","m","ıyor","sunuz"]},
+    {phrase: "Ils/Elles ne font pas", expected: ["yap","m","ıyor","lar"]}
+  ],
+  'yap-past-aff': [
+    {phrase: "J'ai fait", expected: ["yap","tı","m"]},
+    {phrase: "Tu as fait", expected: ["yap","tı","n"]},
+    {phrase: "Il/Elle a fait", expected: ["yap","tı"]},
+    {phrase: "Nous avons fait", expected: ["yap","tı","k"]},
+    {phrase: "Vous avez fait", expected: ["yap","tı","nız"]},
+    {phrase: "Ils/Elles ont fait", expected: ["yap","tı","lar"]}
+  ],
+  'yap-past-neg': [
+    {phrase: "Je n'ai pas fait", expected: ["yap","ma","dı","m"]},
+    {phrase: "Tu n'as pas fait", expected: ["yap","ma","dı","n"]},
+    {phrase: "Il/Elle n'a pas fait", expected: ["yap","ma","dı"]},
+    {phrase: "Nous n'avons pas fait", expected: ["yap","ma","dı","k"]},
+    {phrase: "Vous n'avez pas fait", expected: ["yap","ma","dı","nız"]},
+    {phrase: "Ils/Elles n'ont pas fait", expected: ["yap","ma","dı","lar"]}
+  ],
+  'yap-fut-aff': [
+    {phrase: "Je vais faire", expected: ["yap","aca","ğ","ım"]},
+    {phrase: "Tu vas faire", expected: ["yap","aca","k","sın"]},
+    {phrase: "Il/Elle va faire", expected: ["yap","aca","k"]},
+    {phrase: "Nous allons faire", expected: ["yap","aca","ğ","ız"]},
+    {phrase: "Vous allez faire", expected: ["yap","aca","k","sınız"]},
+    {phrase: "Ils/Elles vont faire", expected: ["yap","aca","k","lar"]}
+  ],
+  'yap-fut-neg': [
+    {phrase: "Je ne vais pas faire", expected: ["yap","ma","y", "aca","ğ","ım"]},
+    {phrase: "Tu ne vas pas faire", expected: ["yap","ma","y", "aca","k","sın"]},
+    {phrase: "Il/Elle ne va pas faire", expected: ["yap","ma","y", "aca","k"]},
+    {phrase: "Nous n'allons pas faire", expected: ["yap","ma","y", "aca","ğ","ız"]},
+    {phrase: "Vous n'allez pas faire", expected: ["yap","ma","y", "aca","k","sınız"]},
+    {phrase: "Ils/Elles ne vont pas faire", expected: ["yap","ma","y", "aca","k","lar"]}
+  ],
+  'konus-pres-aff': [
+    {phrase: "Je parle", expected: ["konus","uyor","um"]},
+    {phrase: "Tu parles", expected: ["konus","uyor","sun"]},
+    {phrase: "Il/Elle parle", expected: ["konus","uyor"]},
+    {phrase: "Nous parlons", expected: ["konus","uyor","uz"]},
+    {phrase: "Vous parlez", expected: ["konus","uyor","sunuz"]},
+    {phrase: "Ils/Elles parlent", expected: ["konus","uyor","lar"]}
+  ],
+  'konus-pres-neg': [
+    {phrase: "Je ne parle pas", expected: ["konus","m","uyor","um"]},
+    {phrase: "Tu ne parles pas", expected: ["konus","m","uyor","sun"]},
+    {phrase: "Il/Elle ne parle pas", expected: ["konus","m","uyor"]},
+    {phrase: "Nous ne parlons pas", expected: ["konus","m","uyor","uz"]},
+    {phrase: "Vous ne parlez pas", expected: ["konus","m","uyor","sunuz"]},
+    {phrase: "Ils/Elles ne parlent pas", expected: ["konus","m","uyor","lar"]}
+  ],
+  'konus-past-aff': [
+    {phrase: "J'ai parlé", expected: ["konus","tu","m"]},
+    {phrase: "Tu as parlé", expected: ["konus","tu","n"]},
+    {phrase: "Il/Elle a parlé", expected: ["konus","tu"]},
+    {phrase: "Nous avons parlé", expected: ["konus","tu","k"]},
+    {phrase: "Vous avez parlé", expected: ["konus","tu","nuz"]},
+    {phrase: "Ils/Elles ont parlé", expected: ["konus","tu","lar"]}
+  ],
+  'konus-past-neg': [
+    {phrase: "Je n'ai pas parlé", expected: ["konus","ma","dı","m"]},
+    {phrase: "Tu n'as pas parlé", expected: ["konus","ma","dı","n"]},
+    {phrase: "Il/Elle n'a pas parlé", expected: ["konus","ma","dı"]},
+    {phrase: "Nous n'avons pas parlé", expected: ["konus","ma","dı","k"]},
+    {phrase: "Vous n'avez pas parlé", expected: ["konus","ma","dı","nız"]},
+    {phrase: "Ils/Elles n'ont pas parlé", expected: ["konus","ma","dı","lar"]}
+  ],
+  'konus-fut-aff': [
+    {phrase: "Je vais parler", expected: ["konus","aca","ğ","ım"]},
+    {phrase: "Tu vas parler", expected: ["konus","aca","k","sın"]},
+    {phrase: "Il/Elle va parler", expected: ["konus","aca","k"]},
+    {phrase: "Nous allons parler", expected: ["konus","aca","ğ","ız"]},
+    {phrase: "Vous allez parler", expected: ["konus","aca","k","sınız"]},
+    {phrase: "Ils/Elles vont parler", expected: ["konus","aca","k","lar"]}
+  ],
+  'konus-fut-neg': [
+    {phrase: "Je ne vais pas parler", expected: ["konus","ma","yaca","ğ","ım"]},
+    {phrase: "Tu ne vas pas parler", expected: ["konus","ma","yaca","k","sın"]},
+    {phrase: "Il/Elle ne va pas parler", expected: ["konus","ma","yaca","k"]},
+    {phrase: "Nous n'allons pas parler", expected: ["konus","ma","yaca","ğ","ız"]},
+    {phrase: "Vous n'allez pas parler", expected: ["konus","ma","yaca","k","sınız"]},
+    {phrase: "Ils/Elles ne vont pas parler", expected: ["konus","ma","yaca","k","lar"]}
+  ],
+  'iste-pres-aff': [
+    {phrase: "Je veux", expected: ["ist","iyor","um"]},
+    {phrase: "Tu veux", expected: ["ist","iyor","sun"]},
+    {phrase: "Il/Elle veut", expected: ["ist","iyor"]},
+    {phrase: "Nous voulons", expected: ["ist","iyor","uz"]},
+    {phrase: "Vous voulez", expected: ["ist","iyor","sunuz"]},
+    {phrase: "Ils/Elles veulent", expected: ["ist","iyor","lar"]}
+  ],
+  'iste-pres-neg': [
+    {phrase: "Je ne veux pas", expected: ["iste","m","iyor","um"]},
+    {phrase: "Tu ne veux pas", expected: ["iste","m","iyor","sun"]},
+    {phrase: "Il/Elle ne veut pas", expected: ["iste","m","iyor"]},
+    {phrase: "Nous ne voulons pas", expected: ["iste","m","iyor","uz"]},
+    {phrase: "Vous ne voulez pas", expected: ["iste","m","iyor","sunuz"]},
+    {phrase: "Ils/Elles ne veulent pas", expected: ["iste","m","iyor","lar"]}
+  ],
+  'iste-past-aff': [
+    {phrase: "J'ai voulu", expected: ["iste","di","m"]},
+    {phrase: "Tu as voulu", expected: ["iste","di","n"]},
+    {phrase: "Il/Elle a voulu", expected: ["iste","di"]},
+    {phrase: "Nous avons voulu", expected: ["iste","di","k"]},
+    {phrase: "Vous avez voulu", expected: ["iste","di","niz"]},
+    {phrase: "Ils/Elles ont voulu", expected: ["iste","di","ler"]}
+  ],
+  'iste-past-neg': [
+    {phrase: "Je n'ai pas voulu", expected: ["iste","me","di","m"]},
+    {phrase: "Tu n'as pas voulu", expected: ["iste","me","di","n"]},
+    {phrase: "Il/Elle n'a pas voulu", expected: ["iste","me","di"]},
+    {phrase: "Nous n'avons pas voulu", expected: ["iste","me","di","k"]},
+    {phrase: "Vous n'avez pas voulu", expected: ["iste","me","di","nız"]},
+    {phrase: "Ils/Elles n'ont pas voulu", expected: ["iste","me","di","lar"]}
+  ],
+  'iste-fut-aff': [
+    {phrase: "Je vais vouloir", expected: ["iste","yece","ğ", "im"]},
+    {phrase: "Tu vas vouloir", expected: ["iste","yece","k","sin"]},
+    {phrase: "Il/Elle va vouloir", expected: ["iste","yece","k"]},
+    {phrase: "Nous allons vouloir", expected: ["iste","yece","ğ","iz"]},
+    {phrase: "Vous allez vouloir", expected: ["iste","yece","k","siniz"]},
+    {phrase: "Ils/Elles vont vouloir", expected: ["iste","yece","k","ler"]}
+  ],
+  'iste-fut-neg': [
+    {phrase: "Je ne vais pas vouloir", expected: ["iste","me","yece","ğ","im"]},
+    {phrase: "Tu ne vas pas vouloir", expected: ["iste","me","yece","k","sin"]},
+    {phrase: "Il/Elle ne va pas vouloir", expected: ["iste","me","yece","k"]},
+    {phrase: "Nous n'allons pas vouloir", expected: ["iste","me","yece","ğ","iz"]},
+    {phrase: "Vous n'allez pas vouloir", expected: ["iste","me","yece","k","siniz"]},
+    {phrase: "Ils/Elles ne vont pas vouloir", expected: ["iste","me","yece","k","ler"]}
+  ]
+};
+
+function generatePhrases() {
+  const keys = Object.keys(phrases);
+  const randomKey = keys[Math.floor(Math.random() * keys.length)];
+  const personIndex = Math.floor(Math.random() * phrases[randomKey].length);
+  const selected = phrases[randomKey][personIndex];
+  document.getElementById('phrase').textContent = selected.phrase;
+  let person = '';
+  if (selected.phrase.startsWith('Je')) person = 'ben';
+  else if (selected.phrase.startsWith('Tu')) person = 'sen';
+  else if (selected.phrase.startsWith('Il/Elle') || selected.phrase.startsWith('Il')) person = 'o';
+  else if (selected.phrase.startsWith('Nous')) person = 'biz';
+  else if (selected.phrase.startsWith('Vous')) person = 'siz';
+  else if (selected.phrase.startsWith('Ils')) person = 'onlar';
+  document.getElementById('person').textContent = person;
+  const expected = selected.expected;
+  const drops = document.querySelectorAll('#targets .drop');
+  drops.forEach((drop, i) => {
+    if (i < expected.length) {
+      drop.dataset.expected = JSON.stringify([expected[i]]);
+    } else {
+      drop.dataset.expected = '[]';
+    }
+  });
+}
+
+// Generate on load
+generatePhrases();
+
+// Drag & drop basic
+let dragged = null;
+document.addEventListener('dragstart', e=>{
+  if(e.target && e.target.classList.contains('pill')){
+    dragged = e.target;
+    e.dataTransfer.setData('text/plain', e.target.dataset.id);
+  }
+});
+<h1>Exercice : placer <em>radical</em> + suffixes</h1>
+<div class="instructions panel">
+  <div class="small"><strong>Consigne :</strong> pour chaque forme donnée, glissez les morceaux (radical / négation / temps / terminaison) dans l'ordre correct.</div>
+  <div style="margin-top:6px" class="hint">Rappelez-vous : ordre général = <strong>radical + (ma/me) 'négation' + marqueur de temps (iyor / di / ecek) + suffixe personnel</strong>.</div>
+</div>
+
+  <div class="grid">
+  <div class="panel">
+    <h2 style="margin:0 0 8px 0">Parties à glisser</h2>
+    <div class="pool" id="pool">
+      <!-- radicals -->
+      <div class="pill" draggable="true" data-id="anla">anla-</div>
+      <div class="pill" draggable="true" data-id="gel">gel-</div>
+      <div class="pill" draggable="true" data-id="yap">yap-</div>
+      <div class="pill" draggable="true" data-id="konus">konuş-</div>
+      <div class="pill" draggable="true" data-id="iste">iste-</div>
+
+      <!-- négation -->
+      <div class="pill" draggable="true" data-id="ma">-ma</div>
+      <div class="pill" draggable="true" data-id="me">-me</div>
+
+      <!-- temps / liaison -->
+      <div class="pill" draggable="true" data-id="iyor">‑iyor</div>
+      <div class="pill" draggable="true" data-id="ıyor">‑ıyor</div>
+      <div class="pill" draggable="true" data-id="uyor">‑uyor</div>
+      <div class="pill" draggable="true" data-id="di">-di</div>
+      <div class="pill" draggable="true" data-id="dı">-dı</div>
+      <div class="pill" draggable="true" data-id="tı">-tı</div>
+      <div class="pill" draggable="true" data-id="ti">-ti</div>
+      <div class="pill" draggable="true" data-id="tu">-tu</div>
+      <div class="pill" draggable="true" data-id="tü">-tü</div>
+      <div class="pill" draggable="true" data-id="ece">-ece</div>
+     <div class="pill" draggable="true" data-id="aca">-aca</div>
+      <div class="pill" draggable="true" data-id="yaca">-yaca</div>
+      <div class="pill" draggable="true" data-id="yece">-yece</div>
+
+      <!-- terminaisons -->
+      <div class="pill" draggable="true" data-id="um">‑um</div>
+            <div class="pill" draggable="true" data-id="ım">‑ım</div>
+            <div class="pill" draggable="true" data-id="üm">‑üm</div>
+            <div class="pill" draggable="true" data-id="im">‑im</div>
+<div class="pill" draggable="true" data-id="sın">-sın</div>
+<div class="pill" draggable="true" data-id="sin">-sin</div>
+<div class="pill" draggable="true" data-id="sun">-sun</div>
+      <div class="pill" draggable="true" data-id="sün">-sün</div>
+<div class="pill" draggable="true" data-id="ız">-ız</div>
+<div class="pill" draggable="true" data-id="iz">-iz</div>
+<div class="pill" draggable="true" data-id="uz">-uz</div>
+<div class="pill" draggable="true" data-id="üz">-üz</div>
+      <div class="pill" draggable="true" data-id="sınız">-sınız</div>
+<div class="pill" draggable="true" data-id="siniz">-siniz</div>
+<div class="pill" draggable="true" data-id="sunuz">-sunuz</div>
+<div class="pill" draggable="true" data-id="sünüz">-sünüz</div>
+      <div class="pill" draggable="true" data-id="m">‑m</div>
+      <div class="pill" draggable="true" data-id="im">‑im</div>
+ <div class="pill" draggable="true" data-id="lar">-lar</div>
+<div class="pill" draggable="true" data-id="ler">-ler</div>
+      <div class="pill" draggable="true" data-id="y">‑y</div>
+      <div class="pill" draggable="true" data-id="ye">‑ye</div>
+    </div>
+
+  <div class="panel">
+    <h2 style="margin:0 0 8px 0">À compléter — glissez dans l'ordre</h2>
+
+    <div class="small" style="margin-bottom:8px">Pour chaque ligne, déposez 1 morceaux selon le verbe (les cases vides restent lorsqu'aucun morceau n'est nécessaire).</div>
+
+<div id="exercise">
+
+<!-- ====================== ANLAMAK ====================== -->
+<!-- Présent -->
+<div class="row"><strong>Anlamak — Présent — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["anla","iyor","um"]'>Ben</div>
+    <div class="drop" data-expected='["anla","iyor","sun"]'>Sen</div>
+    <div class="drop" data-expected='["anla","iyor"]'>O</div>
+    <div class="drop" data-expected='["anla","ıyoruz"]'>Biz</div>
+    <div class="drop" data-expected='["anla","ıyorsunuz"]'>Siz</div>
+    <div class="drop" data-expected='["anla","ıyorlar"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>Anlamak — Présent — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["anla","ma","iyor","um"]'>Ben</div>
+    <div class="drop" data-expected='["anla","ma","iyor","sun"]'>Sen</div>
+    <div class="drop" data-expected='["anla","ma","iyor"]'>O</div>
+    <div class="drop" data-expected='["anla","ma","ıyoruz"]'>Biz</div>
+    <div class="drop" data-expected='["anla","ma","ıyorsunuz"]'>Siz</div>
+    <div class="drop" data-expected='["anla","ma","ıyorlar"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- Passé -->
+<div class="row"><strong>Anlamak — Passé — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["anla","dı","m"]'>Ben</div>
+    <div class="drop" data-expected='["anla","dı","n"]'>Sen</div>
+    <div class="drop" data-expected='["anla","dı"]'>O</div>
+    <div class="drop" data-expected='["anla","dık"]'>Biz</div>
+    <div class="drop" data-expected='["anla","dınız"]'>Siz</div>
+    <div class="drop" data-expected='["anla","dılar"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>Anlamak — Passé — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["anla","ma","dı","m"]'>Ben</div>
+    <div class="drop" data-expected='["anla","ma","dı","n"]'>Sen</div>
+    <div class="drop" data-expected='["anla","ma","dı"]'>O</div>
+    <div class="drop" data-expected='["anla","ma","dık"]'>Biz</div>
+    <div class="drop" data-expected='["anla","ma","dınız"]'>Siz</div>
+    <div class="drop" data-expected='["anla","ma","dılar"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- Futur -->
+<div class="row"><strong>Anlamak — Futur — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["anla","y","acak","ım"]'>Ben</div>
+    <div class="drop" data-expected='["anla","y","acak","sın"]'>Sen</div>
+    <div class="drop" data-expected='["anla","y","acak"]'>O</div>
+    <div class="drop" data-expected='["anla","y","acağız"]'>Biz</div>
+    <div class="drop" data-expected='["anla","y","acaksınız"]'>Siz</div>
+    <div class="drop" data-expected='["anla","y","acaklar"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>Anlamak — Futur — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["anla","ma","y","acak","ım"]'>Ben</div>
+    <div class="drop" data-expected='["anla","ma","y","acak","sın"]'>Sen</div>
+    <div class="drop" data-expected='["anla","ma","y","acak"]'>O</div>
+    <div class="drop" data-expected='["anla","ma","y","acağız"]'>Biz</div>
+    <div class="drop" data-expected='["anla","ma","y","acaksınız"]'>Siz</div>
+    <div class="drop" data-expected='["anla","ma","y","acaklar"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- ====================== GELMEK ====================== -->
+<!-- Présent -->
+<div class="row"><strong>Gelmek — Présent — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["gel","iyor","um"]'>Ben</div>
+    <div class="drop" data-expected='["gel","iyor","sun"]'>Sen</div>
+    <div class="drop" data-expected='["gel","iyor"]'>O</div>
+    <div class="drop" data-expected='["gel","iyoruz"]'>Biz</div>
+    <div class="drop" data-expected='["gel","iyorsunuz"]'>Siz</div>
+    <div class="drop" data-expected='["gel","iyorlar"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>Gelmek — Présent — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["gel","me","iyor","um"]'>Ben</div>
+    <div class="drop" data-expected='["gel","me","iyor","sun"]'>Sen</div>
+    <div class="drop" data-expected='["gel","me","iyor"]'>O</div>
+    <div class="drop" data-expected='["gel","me","iyoruz"]'>Biz</div>
+    <div class="drop" data-expected='["gel","me","iyorsunuz"]'>Siz</div>
+    <div class="drop" data-expected='["gel","me","iyorlar"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- Passé -->
+<div class="row"><strong>Gelmek — Passé — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["gel","di","m"]'>Ben</div>
+    <div class="drop" data-expected='["gel","di","n"]'>Sen</div>
+    <div class="drop" data-expected='["gel","di"]'>O</div>
+    <div class="drop" data-expected='["gel","dik"]'>Biz</div>
+    <div class="drop" data-expected='["gel","diniz"]'>Siz</div>
+    <div class="drop" data-expected='["gel","diler"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>Gelmek — Passé — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["gel","me","di","m"]'>Ben</div>
+    <div class="drop" data-expected='["gel","me","di","n"]'>Sen</div>
+    <div class="drop" data-expected='["gel","me","di"]'>O</div>
+    <div class="drop" data-expected='["gel","me","dik"]'>Biz</div>
+    <div class="drop" data-expected='["gel","me","diniz"]'>Siz</div>
+    <div class="drop" data-expected='["gel","me","diler"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- Futur -->
+<div class="row"><strong>Gelmek — Futur — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["gel","ecek","im"]'>Ben</div>
+    <div class="drop" data-expected='["gel","ecek","sin"]'>Sen</div>
+    <div class="drop" data-expected='["gel","ecek"]'>O</div>
+    <div class="drop" data-expected='["gel","ecek","iz"]'>Biz</div>
+    <div class="drop" data-expected='["gel","ecek","siniz"]'>Siz</div>
+    <div class="drop" data-expected='["gel","ecek","ler"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>Gelmek — Futur — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["gel","me","ecek","im"]'>Ben</div>
+    <div class="drop" data-expected='["gel","me","ecek","sin"]'>Sen</div>
+    <div class="drop" data-expected='["gel","me","ecek"]'>O</div>
+    <div class="drop" data-expected='["gel","me","ecek","iz"]'>Biz</div>
+    <div class="drop" data-expected='["gel","me","ecek","siniz"]'>Siz</div>
+    <div class="drop" data-expected='["gel","me","ecek","ler"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- ====================== YAPMAK ====================== -->
+<!-- Présent -->
+<div class="row"><strong>Yapmak — Présent — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["yap","ıyor","ım"]'>Ben</div>
+    <div class="drop" data-expected='["yap","ıyor","sın"]'>Sen</div>
+    <div class="drop" data-expected='["yap","ıyor"]'>O</div>
+    <div class="drop" data-expected='["yap","ıyoruz"]'>Biz</div>
+    <div class="drop" data-expected='["yap","ıyorsunuz"]'>Siz</div>
+    <div class="drop" data-expected='["yap","ıyorlar"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>Yapmak — Présent — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["yap","ma","ıyor","ım"]'>Ben</div>
+    <div class="drop" data-expected='["yap","ma","ıyor","sın"]'>Sen</div>
+    <div class="drop" data-expected='["yap","ma","ıyor"]'>O</div>
+    <div class="drop" data-expected='["yap","ma","ıyoruz"]'>Biz</div>
+    <div class="drop" data-expected='["yap","ma","ıyorsunuz"]'>Siz</div>
+    <div class="drop" data-expected='["yap","ma","ıyorlar"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- Passé -->
+<div class="row"><strong>Yapmak — Passé — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["yap","tı","m"]'>Ben</div>
+    <div class="drop" data-expected='["yap","tı","n"]'>Sen</div>
+    <div class="drop" data-expected='["yap","tı"]'>O</div>
+    <div class="drop" data-expected='["yap","tık"]'>Biz</div>
+    <div class="drop" data-expected='["yap","tınız"]'>Siz</div>
+    <div class="drop" data-expected='["yap","tılar"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>Yapmak — Passé — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["yap","ma","dı","m"]'>Ben</div>
+    <div class="drop" data-expected='["yap","ma","dı","n"]'>Sen</div>
+    <div class="drop" data-expected='["yap","ma","dı"]'>O</div>
+    <div class="drop" data-expected='["yap","ma","dık"]'>Biz</div>
+    <div class="drop" data-expected='["yap","ma","dınız"]'>Siz</div>
+    <div class="drop" data-expected='["yap","ma","dılar"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- Futur -->
+<div class="row"><strong>Yapmak — Futur — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["yap","acak","ım"]'>Ben</div>
+    <div class="drop" data-expected='["yap","acak","sın"]'>Sen</div>
+    <div class="drop" data-expected='["yap","acak"]'>O</div>
+    <div class="drop" data-expected='["yap","acağız"]'>Biz</div>
+    <div class="drop" data-expected='["yap","acaksınız"]'>Siz</div>
+    <div class="drop" data-expected='["yap","acaklar"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>Yapmak — Futur — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["yap","ma","acak","ım"]'>Ben</div>
+    <div class="drop" data-expected='["yap","ma","acak","sın"]'>Sen</div>
+    <div class="drop" data-expected='["yap","ma","acak"]'>O</div>
+    <div class="drop" data-expected='["yap","ma","acağız"]'>Biz</div>
+    <div class="drop" data-expected='["yap","ma","acaksınız"]'>Siz</div>
+    <div class="drop" data-expected='["yap","ma","acaklar"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- ====================== KONUSMAK ====================== -->
+<!-- Présent -->
+<div class="row"><strong>Konuşmak — Présent — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["konuş","uyor","um"]'>Ben</div>
+    <div class="drop" data-expected='["konuş","uyor","sun"]'>Sen</div>
+    <div class="drop" data-expected='["konuş","uyor"]'>O</div>
+    <div class="drop" data-expected='["konuş","uyoruz"]'>Biz</div>
+    <div class="drop" data-expected='["konuş","uyorsunuz"]'>Siz</div>
+    <div class="drop" data-expected='["konuş","uyorlar"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>Konuşmak — Présent — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["konuş","ma","uyor","um"]'>Ben</div>
+    <div class="drop" data-expected='["konuş","ma","uyor","sun"]'>Sen</div>
+    <div class="drop" data-expected='["konuş","ma","uyor"]'>O</div>
+    <div class="drop" data-expected='["konuş","ma","uyoruz"]'>Biz</div>
+    <div class="drop" data-expected='["konuş","ma","uyorsunuz"]'>Siz</div>
+    <div class="drop" data-expected='["konuş","ma","uyorlar"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- Passé -->
+<div class="row"><strong>Konuşmak — Passé — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["konuş","tu","m"]'>Ben</div>
+    <div class="drop" data-expected='["konuş","tu","n"]'>Sen</div>
+    <div class="drop" data-expected='["konuş","tu"]'>O</div>
+    <div class="drop" data-expected='["konuş","tuk"]'>Biz</div>
+    <div class="drop" data-expected='["konuş","tunuz"]'>Siz</div>
+    <div class="drop" data-expected='["konuş","tular"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>Konuşmak — Passé — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["konuş","ma","dı","m"]'>Ben</div>
+    <div class="drop" data-expected='["konuş","ma","dı","n"]'>Sen</div>
+    <div class="drop" data-expected='["konuş","ma","dı"]'>O</div>
+    <div class="drop" data-expected='["konuş","ma","dık"]'>Biz</div>
+    <div class="drop" data-expected='["konuş","ma","dınız"]'>Siz</div>
+    <div class="drop" data-expected='["konuş","ma","dılar"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- Futur -->
+<div class="row"><strong>Konuşmak — Futur — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["konuş","acak","ım"]'>Ben</div>
+    <div class="drop" data-expected='["konuş","acak","sın"]'>Sen</div>
+    <div class="drop" data-expected='["konuş","acak"]'>O</div>
+    <div class="drop" data-expected='["konuş","acağız"]'>Biz</div>
+    <div class="drop" data-expected='["konuş","acaksınız"]'>Siz</div>
+    <div class="drop" data-expected='["konuş","acaklar"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>Konuşmak — Futur — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["konuş","ma","acak","ım"]'>Ben</div>
+    <div class="drop" data-expected='["konuş","ma","acak","sın"]'>Sen</div>
+    <div class="drop" data-expected='["konuş","ma","acak"]'>O</div>
+    <div class="drop" data-expected='["konuş","ma","acağız"]'>Biz</div>
+    <div class="drop" data-expected='["konuş","ma","acaksınız"]'>Siz</div>
+    <div class="drop" data-expected='["konuş","ma","acaklar"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- ====================== ISTEMEK ====================== -->
+<!-- Présent -->
+<div class="row"><strong>İstemek — Présent — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["iste","iyor","im"]'>Ben</div>
+    <div class="drop" data-expected='["iste","iyor","sin"]'>Sen</div>
+    <div class="drop" data-expected='["iste","iyor"]'>O</div>
+    <div class="drop" data-expected='["iste","iyoruz"]'>Biz</div>
+    <div class="drop" data-expected='["iste","iyorsunuz"]'>Siz</div>
+    <div class="drop" data-expected='["iste","iyorlar"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>İstemek — Présent — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["iste","me","iyor","im"]'>Ben</div>
+    <div class="drop" data-expected='["iste","me","iyor","sin"]'>Sen</div>
+    <div class="drop" data-expected='["iste","me","iyor"]'>O</div>
+    <div class="drop" data-expected='["iste","me","iyoruz"]'>Biz</div>
+    <div class="drop" data-expected='["iste","me","iyorsunuz"]'>Siz</div>
+    <div class="drop" data-expected='["iste","me","iyorlar"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- Passé -->
+<div class="row"><strong>İstemek — Passé — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["iste","di","m"]'>Ben</div>
+    <div class="drop" data-expected='["iste","di","n"]'>Sen</div>
+    <div class="drop" data-expected='["iste","di"]'>O</div>
+    <div class="drop" data-expected='["iste","dik"]'>Biz</div>
+    <div class="drop" data-expected='["iste","diniz"]'>Siz</div>
+    <div class="drop" data-expected='["iste","diler"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>İstemek — Passé — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["iste","me","di","m"]'>Ben</div>
+    <div class="drop" data-expected='["iste","me","di","n"]'>Sen</div>
+    <div class="drop" data-expected='["iste","me","di"]'>O</div>
+    <div class="drop" data-expected='["iste","me","dik"]'>Biz</div>
+    <div class="drop" data-expected='["iste","me","diniz"]'>Siz</div>
+    <div class="drop" data-expected='["iste","me","diler"]'>Onlar</div>
+  </div>
+</div>
+
+<!-- Futur -->
+<div class="row"><strong>İstemek — Futur — Affirmatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["iste","ye","cek","im"]'>Ben</div>
+    <div class="drop" data-expected='["iste","ye","cek","sin"]'>Sen</div>
+    <div class="drop" data-expected='["iste","ye","cek"]'>O</div>
+    <div class="drop" data-expected='["iste","ye","ceğiz"]'>Biz</div>
+    <div class="drop" data-expected='["iste","ye","ceksiniz"]'>Siz</div>
+    <div class="drop" data-expected='["iste","ye","cekler"]'>Onlar</div>
+  </div>
+</div>
+<div class="row"><strong>İstemek — Futur — Négatif</strong>
+  <div class="targets">
+    <div class="drop" data-expected='["iste","me","ye","cek","im"]'>Ben</div>
+    <div class="drop" data-expected='["iste","me","ye","cek","sin"]'>Sen</div>
+    <div class="drop" data-expected='["iste","me","ye","cek"]'>O</div>
+    <div class="drop" data-expected='["iste","me","ye","ceğiz"]'>Biz</div>
+    <div class="drop" data-expected='["iste","me","ye","ceksiniz"]'>Siz</div>
+    <div class="drop" data-expected='["iste","me","ye","cekler"]'>Onlar</div>
+  </div>
+</div>
+
+</div>
+
+  
+<script>
+// Drag & drop basic
+let dragged = null;
+const pool = document.getElementById('pool');
+pool.addEventListener('dragstart', e=>{
+  if(e.target && e.target.classList.contains('pill')){
+    dragged = e.target;
+    e.dataTransfer.setData('text/plain', e.target.dataset.id);
+  }
+});
 
 document.querySelectorAll('.drop').forEach(d => {
   d.addEventListener('dragover', ev=>{ ev.preventDefault(); d.classList.add('filled'); });
@@ -445,7 +1732,7 @@ document.querySelectorAll('.drop').forEach(d => {
     const pill = document.querySelector('.pill[data-id="'+id+'"]').cloneNode(true);
     pill.setAttribute('draggable','true');
     pill.addEventListener('dragstart', e=>{ dragged = pill; e.dataTransfer.setData('text/plain', pill.dataset.id); });
-    pill.addEventListener('click', ()=>{ d.innerHTML=''; d.classList.remove('filled'); });
+    pill.addEventListener('dblclick', ()=>{ d.innerHTML=''; d.classList.remove('filled'); });
     d.innerHTML='';
     d.appendChild(pill);
   });
@@ -467,13 +1754,12 @@ function checkAll(){
   let total = 0, correct = 0;
   document.querySelectorAll('.drop').forEach(drop =>{
     const expected = JSON.parse(drop.dataset.expected);
-    if(expected.length === 0) return;
     total++;
     const dropped = getDroppedIds(drop);
     // if expected length > dropped length -> allow partial checks: we compare sequence starting from radical then other pieces possibly in multiple drops
     // For this exercise we expect 1 piece per drop; if no piece, it's incorrect
     if(dropped.length===0){ drop.style.outline='3px solid #e53e3e'; drop.title='vide'; }
-    const ok = arraysEqual(expected, dropped) || arraysEqual(expected, dropped);
+    const ok = arraysEqual(expected, dropped);
     if(ok){ drop.style.outline='3px solid #2f855a'; drop.title='ok'; correct++; }
     else { drop.style.outline='3px solid #e53e3e'; drop.title='incorrect'; }
   });

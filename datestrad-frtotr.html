@@ -78,7 +78,7 @@
         <input type="text" id="answer" placeholder="Entrez la date en français...">
         <button onclick="checkAnswer()">Vérifier la réponse</button>
         <div class="feedback" id="feedback"></div>
-        <button onclick="newQuestion()" style="margin-top: 10px; background-color: #2196F3;">New Question</button>
+        <button onclick="newQuestion()" style="margin-top: 10px; background-color: #2196F3;">Nouvelle question</button>
     </div>
 
     <script>
@@ -141,17 +141,31 @@
             document.getElementById('feedback').className = 'feedback';
         }
 
-        function checkAnswer() {
-            const userAnswer = document.getElementById('answer').value.toLowerCase().trim();
-            const feedback = document.getElementById('feedback');
+      function checkAnswer() {
+    const userAnswer = document.getElementById('answer').value.toLowerCase().trim();
+    const feedback = document.getElementById('feedback');
 
-            if (userAnswer === currentAnswer) {
-                feedback.textContent = '✓ Correct!';
-                feedback.className = 'feedback correct';
-            } else {
-                feedback.textContent = `✗ Incorrect! `;
-                feedback.className = 'feedback incorrect';
-            }
+    // Découper la réponse correcte
+    const correctParts = currentAnswer.split(" "); 
+    const correctDay = correctParts[0];   // jour de la semaine
+    const correctNumber = correctParts[1]; // jour du mois
+    const correctMonth = correctParts[2]; // mois
+
+    // Vérifier si chaque élément apparaît dans la réponse utilisateur
+    const isCorrect =
+        userAnswer.includes(correctDay) &&
+        userAnswer.includes(correctNumber) &&
+        userAnswer.includes(correctMonth);
+
+    if (isCorrect) {
+        feedback.textContent = '✓ Correct !';
+        feedback.className = 'feedback correct';
+    } else {
+        feedback.textContent = `✗ Incorrect ! `;
+        feedback.className = 'feedback incorrect';
+    }
+}
+
         }
 
         newQuestion();
