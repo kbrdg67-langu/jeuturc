@@ -47,6 +47,9 @@
     </style>
 </head>
 <body>
+<div class="card" id="card">Clique sur le bouton pour générer une carte chance.</div>
+<button onclick="generateCard()">Nouvelle carte</button>
+
 <script>
 const cards = [
 "Günaydın! – Dis une salutation adaptée à un moment de la journée (günaydın, iyi akşamlar…).",
@@ -78,14 +81,14 @@ const cards = [
 "Remercie un joueur et vérifie qu’il réponde correctement.",
 "Hızlı / yavaş – Cherche la définition de ces deux mots.",
 "Interpelle un joueur poliment (excusez-moi).",
-"Utilise une expression pas encore utilisée aujourd'hui."
+"Utilise une expression pas encore utilisée aujourd'hui.",
 "Bu kim? – Présente un collègue imaginaire ou une célébrité en donnant son métier et sa nationalité.",
 "Evde ne var? – Dis deux objets qu’il y a dans ta maison, et un qu’il n’y a pas.",
 "Masada ne var? – Localise un objet sur la table et décris-le avec sa couleur.",
 "Benim kalemim nerede? – Pose une question avec un suffixe possessif.",
 "Kimde? – Demande à qui appartient un objet.",
 "Bunlar ne? – Parle de plusieurs objets en utilisant le pluriel.",
-"Şu oda hangi renk? – Dis la couleur d’une pièce de la maison.",
+"Şu oda hangi renk? – Dis la couleur d’une pièce de ta maison.",
 "Bugün hava nasıl? – Décris la météo du jour avec un adjectif.",
 "Bu sayı nedir? – Dis un nombre au hasard et fais le répéter au joueur suivant.",
 "Kaçıncı gün? – Donne un nombre ordinal (premier, deuxième…)",
@@ -120,9 +123,5 @@ function generateCard() {
     document.getElementById("card").innerText = cards[index];
 }
 </script>
-</head>
-<body>
-<div class="card" id="card">Clique sur le bouton pour générer une carte chance.</div>
-<button onclick="generateCard()">Nouvelle carte</button>
 </body>
 </html>
