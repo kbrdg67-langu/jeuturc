@@ -5,118 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu | Publications interactives de turc</title>
   <!-- Je nomme ce fichier index mais c'est juste mon premier jeu sur Github !--> 
-  <style>
-    body {
-        margin: 0;
-        font-family: Garamond, serif;
-        background: #7f5417;
-        color: #f4eeeb;
-    }
-
-    /* page layout: sidebar + main column */
-    .page {
-        display: flex;
-        min-height: 100vh;
-        align-items: stretch;
-        column-gap: 48px; /* space between menu and main so they don't touch */
-        gap: 48px;
-        padding: 0;
-    }
-
-    h1 {
-        font-size: 2.5em;
-    }
-
-    p {
-        font-size: 1.5em;
-    }
-    
-  .menu {
-      /* sidebar column */
-      position: sticky;
-      top: 0;
-      width: 340px; /* élargi comme demandé */
-      height: 100vh;
-      overflow: auto;
-      background: #2e200c;
-      border-radius: 0 8px 8px 0;
-      box-shadow: 0 2px 8px #110b03;
-      padding: 16px 18px;
-      z-index: 999;
-      color: #fff;
-      box-sizing: border-box;
-      overflow: visible; /* allow tooltips to overflow */
-  }
-  .menu-title {
-      font-weight: bold;
-      margin-bottom: 12px;
-      font-size: 1em;
-  }
-  .menu-list {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-  }
-  .menu-list li {
-      margin: 8px 0;
-  }
-
-        /* main content column */
-        main {
-            flex: 1 auto;
-            box-sizing: border-box;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center; 
-            align-items: flex-start; /* keep text left-aligned */
-            padding: 40px 32px;
-            background: transparent;
-            overflow: visible; /* allow tooltips to overflow */
-        }
-        
-  .menu-list a {
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.2s;
-  }
-  .menu-list a:hover {
-      color: #1e90ff;
-  }
-
-  /* Tooltip styles (visible on hover) */
-  .has-tooltip { position: relative; cursor: help; }
-  .has-tooltip::after {
-      content: attr(data-tooltip);
-      position: absolute;
-      left: 100%;
-      top: 0;
-      transform: translateY(8px);
-      margin-left: 12px; /* space between link and tooltip */
-      white-space: nowrap;
-      background: #5e3e11;
-      color: #fff;
-      padding: 6px 8px;
-      border-radius: 4px;
-      font-size: 0.9em;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .12s, transform .12s;
-      z-index: 1000;
-  }
-  .has-tooltip:hover::after,
-  .has-tooltip.show-tooltip::after {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-  }
-    /* Responsive: on narrow screens keep menu near top and remove translate */
-    @media (max-width: 900px) {
-        .page { flex-direction: column; }
-        .menu { position: relative; width: 100%; height: auto; border-radius: 0; box-shadow: none; }
-        main { padding-top: 20px; align-items: center; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -134,6 +23,7 @@
         <li><a href="https://kbrdg67-langu.github.io/jeuturc/turc-pro-iv-maitriser-les-nombres-couleurs-et-expressions-cles-au-travail-raw-GHACC9Df/content/index7.html" data-tooltip="Nombres, couleurs, prix, heure + expression utiles (demande spécifique)">Turc pro - nombres, expressions clés</a></li>
         <li><a href="https://kbrdg67-langu.github.io/jeuturc/turc-pro-v-communiquer-avec-les-chiffres-raw-ut1tpXgG/content/index6.html" data-tooltip="Mail, rappel nombres, rappel grammaire (position, posession)">Turc pro - communiquer avec les chiffres</a></li>
         <li><a href="https://kbrdg67-langu.github.io/jeuturc/index8.html" data-tooltip="Générateur de dates en turc à traduire en français">Générateur - traduction dates</a></li>
+        <li><a href="https://kbrdg67-langu.github.io/jeuturc/saat.html" data-tooltip="Générateur et exercices pour apprendre l'heure en turc">Saat - Heure en Turc</a></li>
         <li><a href="https://kbrdg67-langu.github.io/jeuturc/suffixes-5.html" data-tooltip="Exercices de conjugaison">Conjuger comprendre, parler, arriver, vouloir, faire en turc</a></li>
 <!-- Ajoute ici d'autres liens vers les autres fichiers index du dépôt -->
     </ul>

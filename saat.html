@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Générateur d'heures en turc</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Small layout helpers to match the React example look */
+        .panel { background:#fff;border-radius:8px;padding:18px;box-shadow:0 4px 12px rgba(0,0,0,0.06); }
+        .header-row { display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px }
+        .score-pill { background:#e6ffef;color:#064e3b;padding:8px 12px;border-radius:8px;font-weight:700 }
+        .toggle-btn { background:transparent;border:0;color:#1e3a8a;cursor:pointer;font-weight:600 }
+        .big-time { font-size:56px;font-weight:800;color:#1e293b }
+        .muted { color:#475569 }
+        .controls { display:flex;gap:12px;margin-top:12px }
+        .btn { background:#1e40af;color:#fff;padding:10px 14px;border-radius:8px;border:0;cursor:pointer; font-weight:700 }
+        .btn.secondary { background:#374151 }
+        .feedback { margin-top:12px }
+        .explain { background:#f8fafc;border:1px solid #e6eef9;padding:10px;border-radius:8px }
+    </style>
+</head>
+<body>
+    <main style="max-width:960px;margin:20px auto;padding:16px">
+        <div class="panel">
+            <div class="header-row">
+                <div>
+                    <h1 style="margin:0;font-size:24px;color:#0f172a">Générateur d'heures en turc</h1>
+                    <div class="muted">Pratique: composez l'heure en turc en respectant l'harmonie vocalique</div>
+                </div>
+                <div style="text-align:right">
+                    <div class="score-pill" id="score">0 / 0</div>
+                    <button class="toggle-btn" id="rulesToggle">Voir les règles</button>
+                </div>
+            </div>
+
+            <div id="rulesPanel" style="display:none;margin-bottom:12px">
+                <div class="panel" style="background:#f8fafc;border:1px solid #e6eef9">
+                    <strong>Accusatif (pour "geçiyor")</strong>
+                    <div class="muted">Ajoute -ı/-i/-u/-ü selon la dernière voyelle; insérer « y » quand le mot termine par une voyelle (ex: iki → ikiyi)</div>
+                    <hr />
+                    <strong>Datif (pour "var")</strong>
+                    <div class="muted">Ajoute -a/-e selon la dernière voyelle; insérer « y » quand le mot termine par une voyelle (ex: iki → ikiye)</div>
+                </div>
+            </div>
+
+            <div style="text-align:center;margin:18px 0">
+                <div class="big-time" id="digitalTime">--:--</div>
+                <div class="muted" id="frenchTime">--</div>
+            </div>
+
+            <div>
+                <label style="font-weight:700">Écrivez l'heure en turc</label>
+                <input id="answerInput" type="text" placeholder="Ex: 13'ü 9 geçiyor" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e3e8ef;margin-top:8px;font-size:16px">
+            </div>
+
+            <div class="controls">
+                <button id="checkBtn" class="btn">Vérifier</button>
+                <button id="newBtn" class="btn secondary">Nouvelle heure</button>
+                <button id="showAnswerBtn" class="btn" style="background:#047857">Montrer réponse</button>
+            </div>
+
+            <div id="feedback" class="feedback"></div>
+        </div>
+    </main>
+
+    <script>
+        // State
+        let current = null; // {hour, minute, period}
+        let score = {correct:0, total:0};
+
+        // Number words
+        const numberToTurkish = {
+            0:'sıfır',1:'bir',2:'iki',3:'üç',4:'dört',5:'beş',6:'altı',7:'yedi',8:'sekiz',9:'dokuz',10:'on',
+            11:'on bir',12:'on iki',13:'on üç',14:'on dört',15:'on beş',16:'on altı',17:'on yedi',18:'on sekiz',19:'on dokuz',20:'yirmi',
+            21:'yirmi bir',22:'yirmi iki',23:'yirmi üç',24:'yirmi dört',30:'otuz',40:'kırk',50:'elli'
+        };
+
+        // helpers
+        function lastVowel(word) {
+            if(!word) return '';
+            const vowels = 'aeıioöuüAEIİOÖUÜ';
+            for(let i=word.length-1;i>=0;i--) if(vowels.indexOf(word[i])!==-1) return word[i].toLowerCase();
+            return '';
+        }
+        function endsWithVowel(word){ if(!word) return false; const last=word[word.length-1].toLowerCase(); return 'aeıioöuü'.indexOf(last)!==-1 }
+        function accSuffixFor(word){ const v=lastVowel(word); let suf='ı'; if(v==='a'||v==='ı') suf='ı'; else if(v==='e'||v==='i') suf='i'; else if(v==='o'||v==='u') suf='u'; else if(v==='ö'||v==='ü') suf='ü'; return (endsWithVowel(word)?('y'+suf):suf); }
+        function datSuffixFor(word){ const v=lastVowel(word); let suf='a'; if(v==='e'||v==='i'||v==='ö'||v==='ü') suf='e'; return (endsWithVowel(word)?('y'+suf):suf); }
+
+        function generateTime(){
+            const hour = Math.floor(Math.random()*12)+1; // 1..12
+            const minute = Math.floor(Math.random()*60);
+            const period = Math.random()>0.5? 'sabah':'akşam';
+            current = {hour, minute, period};
+            renderTime();
+            document.getElementById('answerInput').value = '';
+            document.getElementById('feedback').innerHTML = '';
+        }
+
+        function renderTime(){
+            const h = current.hour; const m = current.minute;
+            document.getElementById('digitalTime').textContent = `${h}:${m<10?('0'+m):m}`;
+            document.getElementById('frenchTime').textContent = formatFrenchTime(h,m) + (current.period?(' ('+current.period+')'):'');
+        }
+
+        function formatFrenchTime(h,m){ if(m===0) return `Il est ${h}h pile`; if(m===15) return `Il est ${h}h et quart`; if(m===30) return `Il est ${h}h et demi`; if(m===45) return `Il est ${h+1}h moins le quart`; if(m>30) return `Il est ${h+1}h moins ${60-m}`; return `Il est ${h}h${m<10?('0'+m):m}` }
+
+        function formatTurkishTime(hour,minute,period){
+            let res='';
+            if(minute===0){ res = `${numberToTurkish[hour] || hour} saat`; }
+            else if(minute===30){ res = `${numberToTurkish[hour] || hour} buçuk`; }
+            else if(minute===15){ res = `${numberToTurkish[hour] || hour} çeyrek`; }
+            else if(minute===45){ const nh = hour===12?1:hour+1; res = `${numberToTurkish[nh] || nh} var ${numberToTurkish[60-minute]|| (60-minute)}`; }
+            else if(minute<30){ const mWord = numberToTurkish[minute] || minute; const hWord = numberToTurkish[hour] || hour; const a = accSuffixFor(hWord); res = `${hWord}${a} ${mWord} geçiyor`; }
+            else { const nh = hour===12?1:hour+1; const left = 60-minute; const leftWord = numberToTurkish[left]||left; const nhWord = numberToTurkish[nh]||nh; const d = datSuffixFor(nhWord); res = `${nhWord}${d} ${leftWord} var`; }
+            if(period) res = `(${period}) ${res}`;
+            return res;
+        }
+
+        // tolerant canonicalization
+        function removeDiacritics(s){ return s.replace(/ğ/g,'g').replace(/Ğ/g,'G').replace(/ü/g,'u').replace(/Ü/g,'U').replace(/ş/g,'s').replace(/Ş/g,'S').replace(/ı/g,'i').replace(/İ/g,'I').replace(/ö/g,'o').replace(/Ö/g,'O').replace(/ç/g,'c').replace(/Ç/g,'C'); }
+        function canonicalize(s){ if(!s) return ''; s = s.toLowerCase(); s = s.replace(/[.,;:!?]/g,' '); s = s.replace(/\s+/g,' ').trim(); s = removeDiacritics(s); return s; }
+
+        // generate variants (reuse logic similar to earlier)
+        function generateVariants(hour,minute){
+            const variants=[];
+            const hWord = numberToTurkish[hour]||hour; const nh = hour===12?1:hour+1; const nhWord = numberToTurkish[nh]||nh;
+            if(minute===0){ variants.push(`${hWord} saat`, `${hour} saat`); return variants; }
+            if(minute===30){ variants.push(`${hWord} buçuk`,`${hour} buçuk`); return variants; }
+            if(minute===15){ variants.push(`${hWord} çeyrek`); const d = datSuffixFor(nhWord); variants.push(`${nhWord}${d} çeyrek var`); return variants; }
+            if(minute<30){ const mWord = numberToTurkish[minute]||minute; const a = accSuffixFor(hWord); variants.push(`${hWord} ${mWord} geçiyor`, `${hWord}${a} ${mWord} geçiyor`, `${hour}'${a} ${minute} geçiyor`, `${hour}:${minute} geçiyor`, `${hWord}${a}${mWord} geçiyor`); return variants; }
+            const left = 60-minute; const leftWord = numberToTurkish[left]||left; const d = datSuffixFor(nhWord); variants.push(`${nhWord} var ${leftWord}`, `${nhWord}${d} ${leftWord} var`, `${nhWord}'${d} ${leftWord} var`, `${nh}:${left} var`);
+            return variants;
+        }
+
+        function check(){
+            const raw = document.getElementById('answerInput').value || '';
+            const input = canonicalize(raw);
+            const variants = generateVariants(current.hour,current.minute).map(canonicalize);
+            const canonicalExpected = canonicalize(formatTurkishTime(current.hour,current.minute,current.period));
+            variants.push(canonicalExpected);
+            if(variants.indexOf(input)!==-1){ ok(true); return; }
+            for(const v of variants){ const toks = v.split(' ').filter(Boolean); if(toks.length>0 && toks.every(tok=> input.indexOf(tok)!==-1)){ ok(true); return; } }
+            ok(false);
+        }
+
+        function ok(isCorrect){
+            const feedback = document.getElementById('feedback');
+            const correctAnswer = formatTurkishTime(current.hour,current.minute,current.period);
+            const explanation = explain(current.hour,current.minute);
+            score.total += 1; if(isCorrect) score.correct +=1;
+            document.getElementById('score').textContent = `${score.correct} / ${score.total}`;
+            if(isCorrect){ feedback.innerHTML = `<div style="background:#ecfdf5;border:1px solid #bbf7d0;padding:12px;border-radius:8px"><strong style="color:#065f46">✓ Correct</strong><div style="margin-top:8px" class="explain">${explanation}</div></div>`; }
+            else{ feedback.innerHTML = `<div style="background:#fff1f2;border:1px solid #f8c6cb;padding:12px;border-radius:8px"><strong style="color:#991b1b">✗ Incorrect</strong><div style="margin-top:8px" class="explain"><div><strong>Votre réponse:</strong> ${document.getElementById('answerInput').value}</div><div style="margin-top:8px"><strong>Réponse attendue:</strong> ${correctAnswer}</div><div style="margin-top:8px">${explanation}</div></div></div>`; }
+        }
+
+        function explain(hour,minute){ if(minute===0) return `Heure pile : on dit "${numberToTurkish[hour] || hour} saat".`; if(minute===15) return `Quart d'heure : on dit "${numberToTurkish[hour]||hour} çeyrek" (ou forme avec datif sur l'heure suivante).`; if(minute===30) return `Demi : on dit "${numberToTurkish[hour]||hour} buçuk".`; if(minute===45){ const nh=hour===12?1:hour+1; return `15 minutes avant : on dit "${numberToTurkish[nh]||nh} var ${numberToTurkish[60-minute]||60-minute}" avec datif sur l'heure suivante.` } if(minute<30) return `${minute} minutes après l'heure : on utilise "geçiyor" et accusatif sur l'heure (suffixe: -${accSuffixFor(numberToTurkish[hour]||hour)}).`; const nh=hour===12?1:hour+1; return `${60-minute} minutes avant l'heure suivante : on utilise "var" et datif sur l'heure suivante (suffixe: -${datSuffixFor(numberToTurkish[nh]||nh)}).`; }
+
+        // UI wiring
+        document.getElementById('checkBtn').addEventListener('click', check);
+        document.getElementById('newBtn').addEventListener('click', generateTime);
+        document.getElementById('rulesToggle').addEventListener('click', ()=>{ const p=document.getElementById('rulesPanel'); p.style.display=(p.style.display==='none'?'block':'none'); document.getElementById('rulesToggle').textContent = p.style.display==='none' ? 'Voir les règles' : 'Masquer'; });
+        document.getElementById('showAnswerBtn').addEventListener('click', ()=>{ const ans = formatTurkishTime(current.hour,current.minute,current.period); const fb=document.getElementById('feedback'); fb.innerHTML = `<div class="explain"><strong>Réponse:</strong> ${ans}</div>`; });
+        document.getElementById('answerInput').addEventListener('keypress', function(e){ if(e.key==='Enter') check(); });
+
+        // init
+        generateTime();
+    </script>
+</body>
+</html>

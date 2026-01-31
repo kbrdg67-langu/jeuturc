@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Suffixes personnels — Traductions</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+      color: #2d3748;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: white;
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .subtitle {
+      text-align: center;
+      color: rgba(255,255,255,0.9);
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .instructions {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .score-display {
+      background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .score-display h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .score-numbers {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .progress-bar {
+      background: rgba(255,255,255,0.3);
+      height: 8px;
+      border-radius: 4px;
+      margin-top: 15px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      background: white;
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.5s ease;
+    }
+
+    .exercise {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .exercise-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #667eea;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #667eea;
+    }
+
+    .exercise-list {
+      list-style: none;
+      margin-bottom: 25px;
+    }
+
+    .exercise-item {
+      padding: 15px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      background: #f7fafc;
+      border-left: 4px solid #e2e8f0;
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+    }
+
+    .exercise-item:hover {
+      background: #edf2f7;
+    }
+
+    .translation-input {
+      width: 100%;
+      max-width: 400px;
+      padding: 10px 15px;
+      margin-top: 8px;
+      border: 2px solid #cbd5e0;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      font-family: inherit;
+    }
+
+    .translation-input:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    .button-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    button {
+      background: #667eea;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(102, 126, 234, 0.2);
+    }
+
+    button:hover {
+      background: #5a67d8;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(102, 126, 234, 0.3);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    #resetBtn {
+      background: #718096;
+    }
+
+    #resetBtn:hover {
+      background: #4a5568;
+    }
+
+    #generateBtn {
+      background: #ed8936;
+    }
+
+    #generateBtn:hover {
+      background: #dd6b20;
+    }
+
+    #results {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .small {
+      font-size: 0.9rem;
+      color: #e53e3e;
+      font-style: italic;
+      margin-top: 6px;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .exercise {
+        padding: 20px;
+      }
+
+      .translation-input {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Suffixes Personnels Turcs</h1>
+    <p class="subtitle">Maîtrisez les possessifs en turc 🇹🇷</p>
+
+    <div class="score-display" id="scoreDisplay" style="display:none;">
+      <h2>Votre progression</h2>
+      <div class="score-numbers">
+        <span id="scoreCorrect">0</span> / <span id="scoreTotal">0</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <p class="instructions">
+      <strong>Instructions :</strong> Traduisez les expressions suivantes en turc en utilisant les suffixes possessifs appropriés. 
+      Vous pouvez utiliser la forme complète (avec pronom) ou la forme courte (sans pronom).
+      <br><br>
+      Cliquez sur <strong>"Nouvelles expressions"</strong> pour générer un nouvel exercice aléatoire.
+    </p>
+
+    <div class="exercise">
+      <h2 class="exercise-title">Possessifs à traduire</h2>
+      <ol class="exercise-list" id="exerciseList"></ol>
+
+      <div class="button-group">
+        <button id="generateBtn">🔄 Nouvelles expressions</button>
+        <button id="checkBtn">✓ Vérifier</button>
+        <button id="resetBtn">⟲ Réinitialiser</button>
+      </div>
+
+      <div id="results"></div>
+    </div>
+  </main>
+
+  <script>
+    // Large pool of exercises
+    const allExercises = [
+      // Base
+      { fr: "ma voiture", variants: ['arabam', 'benim arabam'] },
+      { fr: "ton livre", variants: ['kitabın', 'senin kitabın'] },
+      { fr: "sa maison", variants: ['evi', 'onun evi'] },
+      { fr: "notre école", variants: ['okulumuz', 'bizim okulumuz'] },
+      { fr: "votre travail", variants: ['işiniz', 'sizin işiniz'] },
+      { fr: "leur chat", variants: ['kedileri', 'onların kedileri'] },
+      { fr: "mon nom", variants: ['adım', 'benim adım', 'ismim', 'benim ismim'] },
+      { fr: "ta chambre", variants: ['odan', 'senin odan'] },
+      
+      // Famille
+      { fr: "mon frère", variants: ['kardeşim', 'benim kardeşim', 'erkek kardeşim'] },
+      { fr: "ta sœur", variants: ['kız kardeşin', 'senin kız kardeşin'] },
+      { fr: "sa mère", variants: ['annesi', 'onun annesi'] },
+      { fr: "notre père", variants: ['babamız', 'bizim babamız'] },
+      { fr: "votre famille", variants: ['aileniz', 'sizin aileniz'] },
+      { fr: "leur enfant", variants: ['çocukları', 'onların çocukları'] },
+      { fr: "mon fils", variants: ['oğlum', 'benim oğlum'] },
+      { fr: "ta fille", variants: ['kızın', 'senin kızın'] },
+      { fr: "son grand-père", variants: ['dedesi', 'onun dedesi'] },
+      { fr: "notre grand-mère", variants: ['anneannémiz', 'büyükannemiz', 'bizim büyükannemiz'] },
+      
+      // Objets quotidiens
+      { fr: "mon ordinateur", variants: ['bilgisayarım', 'benim bilgisayarım'] },
+      { fr: "ton téléphone", variants: ['telefonun', 'senin telefonun'] },
+      { fr: "sa table", variants: ['masası', 'onun masası'] },
+      { fr: "notre porte", variants: ['kapımız', 'bizim kapımız'] },
+      { fr: "votre fenêtre", variants: ['pencereniz', 'sizin pencereniz'] },
+      { fr: "leur chaise", variants: ['sandalyeleri', 'onların sandalyeleri'] },
+      { fr: "mon sac", variants: ['çantam', 'benim çantam'] },
+      { fr: "ton stylo", variants: ['kaleminiz', 'kalemın', 'senin kalemin'] },
+      { fr: "son cahier", variants: ['defteri', 'onun defteri'] },
+      { fr: "notre clé", variants: ['anahtarımız', 'bizim anahtarımız'] },
+      
+      // Corps
+      { fr: "ma main", variants: ['elim', 'benim elim'] },
+      { fr: "ton pied", variants: ['ayağın', 'senin ayağın'] },
+      { fr: "sa tête", variants: ['başı', 'onun başı', 'kafası'] },
+      { fr: "nos yeux", variants: ['gözlerimiz', 'bizim gözlerimiz'] },
+      { fr: "vos oreilles", variants: ['kulaklarınız', 'sizin kulaklarınız'] },
+      { fr: "mon cœur", variants: ['kalbim', 'benim kalbim', 'yüreğim'] },
+      { fr: "ton bras", variants: ['kolun', 'senin kolun'] },
+      { fr: "sa jambe", variants: ['bacağı', 'onun bacağı'] },
+      
+      // Lieux et espaces
+      { fr: "mon pays", variants: ['ülkem', 'benim ülkem'] },
+      { fr: "ta ville", variants: ['şehrin', 'senin şehrin'] },
+      { fr: "son village", variants: ['köyü', 'onun köyü'] },
+      { fr: "notre quartier", variants: ['mahallemiz', 'bizim mahallemiz'] },
+      { fr: "votre rue", variants: ['caddeniz', 'sokağınız', 'sizin caddeniz'] },
+      { fr: "leur jardin", variants: ['bahçeleri', 'onların bahçeleri'] },
+      { fr: "mon bureau", variants: ['ofisim', 'benim ofisim', 'bürom'] },
+      { fr: "ta cuisine", variants: ['mutfağın', 'senin mutfağın'] },
+      { fr: "son salon", variants: ['salonu', 'onun salonu'] },
+      
+      // Temps
+      { fr: "mon jour", variants: ['günüm', 'benim günüm'] },
+      { fr: "ta semaine", variants: ['haftanı', 'senin haftanı'] },
+      { fr: "son mois", variants: ['ayı', 'onun ayı'] },
+      { fr: "notre année", variants: ['yılımız', 'senemiz', 'bizim yılımız'] },
+      { fr: "votre heure", variants: ['saatiniz', 'sizin saatiniz'] },
+      { fr: "mon anniversaire", variants: ['doğum günüm', 'benim doğum günüm'] },
+      
+      // Vêtements
+      { fr: "mon manteau", variants: ['palto', 'paltom', 'benim paltom'] },
+      { fr: "ta chemise", variants: ['gömleğin', 'senin gömleğin'] },
+      { fr: "son pantalon", variants: ['pantolonu', 'onun pantolonu'] },
+      { fr: "nos chaussures", variants: ['ayakkabılarımız', 'bizim ayakkabılarımız'] },
+      { fr: "vos lunettes", variants: ['gözlükleriniz', 'sizin gözlükleriniz'] },
+      { fr: "mon chapeau", variants: ['şapkam', 'benim şapkam'] },
+      { fr: "ta cravate", variants: ['kravatın', 'senin kravatın'] },
+      
+      // Nourriture
+      { fr: "mon pain", variants: ['ekmeğim', 'benim ekmeğim'] },
+      { fr: "ton eau", variants: ['suyun', 'senin suyun'] },
+      { fr: "son café", variants: ['kahvesi', 'onun kahvesi'] },
+      { fr: "notre thé", variants: ['çayımız', 'bizim çayımız'] },
+      { fr: "votre repas", variants: ['yemeğiniz', 'sizin yemeğiniz'] },
+      { fr: "leur petit-déjeuner", variants: ['kahvaltıları', 'onların kahvaltıları'] },
+      { fr: "mon fromage", variants: ['peynirim', 'benim peynirim'] },
+      { fr: "ton fruit", variants: ['meyven', 'senin meyven'] },
+      
+      // Études et travail
+      { fr: "mon professeur", variants: ['öğretmenim', 'benim öğretmenim', 'hocam'] },
+      { fr: "ton élève", variants: ['öğrencin', 'senin öğrencin'] },
+      { fr: "sa classe", variants: ['sınıfı', 'onun sınıfı'] },
+      { fr: "notre université", variants: ['üniversitemiz', 'bizim üniversitemiz'] },
+      { fr: "votre diplôme", variants: ['diplomanız', 'sizin diplomanız'] },
+      { fr: "leur examen", variants: ['sınavları', 'onların sınavları'] },
+      { fr: "mon collègue", variants: ['meslektaşım', 'iş arkadaşım'] },
+      { fr: "ta profession", variants: ['mesleğin', 'senin mesleğin'] },
+      
+      // Documents et administratif
+      { fr: "mon passeport", variants: ['pasaportum', 'benim pasaportum'] },
+      { fr: "ta carte d'identité", variants: ['kimliğin', 'senin kimliğin'] },
+      { fr: "son billet", variants: ['bileti', 'onun bileti'] },
+      { fr: "notre réservation", variants: ['rezervasyonumuz', 'bizim rezervasyonumuz'] },
+      { fr: "votre adresse", variants: ['adresiniz', 'sizin adresiniz'] },
+      { fr: "leur numéro", variants: ['numaraları', 'onların numaraları'] },
+      { fr: "mon document", variants: ['belgem', 'benim belgem', 'dökümanım'] },
+      
+      // Émotions et concepts abstraits
+      { fr: "mon rêve", variants: ['rüyam', 'hayalim', 'benim rüyam'] },
+      { fr: "ton problème", variants: ['problemin', 'sorunun', 'senin problemin'] },
+      { fr: "sa solution", variants: ['çözümü', 'onun çözümü'] },
+      { fr: "notre espoir", variants: ['umudumuz', 'bizim umudumuz'] },
+      { fr: "votre idée", variants: ['fikriniz', 'sizin fikriniz'] },
+      { fr: "mon bonheur", variants: ['mutluluğum', 'benim mutluluğum'] },
+      { fr: "ta peur", variants: ['korkunuz', 'senin korkunuz'] },
+      
+      // Divers
+      { fr: "mon ami", variants: ['arkadaşım', 'dostum', 'benim arkadaşım'] },
+      { fr: "ton voisin", variants: ['komşun', 'senin komşun'] },
+      { fr: "son chien", variants: ['köpeği', 'onun köpeği'] },
+      { fr: "notre voiture", variants: ['arabamız', 'otomobilimiz', 'bizim arabamız'] },
+      { fr: "votre question", variants: ['sorunuz', 'sizin sorunuz'] },
+      { fr: "leur réponse", variants: ['cevapları', 'onların cevapları'] },
+      { fr: "mon argent", variants: ['param', 'benim param'] },
+      { fr: "ta valise", variants: ['bavulun', 'senin bavulun'] },
+      { fr: "son histoire", variants: ['hikayesi', 'öyküsü', 'onun hikayesi'] },
+      { fr: "notre langue", variants: ['dilimiz', 'bizim dilimiz'] }
+    ];
+
+    let currentExercises = [];
+    let totalScore = { correct: 0, total: 0 };
+
+    function removeDiacritics(s) {
+      return s
+        .replace(/ğ/g,'g').replace(/Ğ/g,'G')
+        .replace(/ü/g,'u').replace(/Ü/g,'U')
+        .replace(/ş/g,'s').replace(/Ş/g,'S')
+        .replace(/ı/g,'i').replace(/İ/g,'I')
+        .replace(/ö/g,'o').replace(/Ö/g,'O')
+        .replace(/ç/g,'c').replace(/Ç/g,'C')
+        .replace(/\u015f/g,'s').replace(/\u011f/g,'g');
+    }
+
+    function canonicalize(s){
+      if (!s) return '';
+      s = s.toLowerCase();
+      s = s.replace(/[.,;:!?]/g,' ');
+      s = s.replace(/\s+/g,' ').trim();
+      s = removeDiacritics(s);
+      return s;
+    }
+
+    function shuffleArray(array) {
+      const newArray = [...array];
+      for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+      }
+      return newArray;
+    }
+
+    function generateExercises() {
+      const shuffled = shuffleArray(allExercises);
+      currentExercises = shuffled.slice(0, 8); // 8 exercices aléatoires
+      
+      const list = document.getElementById('exerciseList');
+      list.innerHTML = '';
+      
+      currentExercises.forEach((ex, idx) => {
+        const li = document.createElement('li');
+        li.className = 'exercise-item';
+        li.innerHTML = `
+          <strong>${idx + 1}.</strong> ${ex.fr}
+          <input class="translation-input" data-index="${idx}" placeholder="Votre traduction en turc">
+        `;
+        list.appendChild(li);
+      });
+
+      // Add Enter key listener
+      document.querySelectorAll('.translation-input').forEach(i => {
+        i.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') checkAll();
+        });
+      });
+
+      // Reset results
+      document.getElementById('results').innerHTML = '';
+    }
+
+    function updateScore() {
+      const scoreDisplay = document.getElementById('scoreDisplay');
+      if (totalScore.total > 0) {
+        scoreDisplay.style.display = 'block';
+        document.getElementById('scoreCorrect').textContent = totalScore.correct;
+        document.getElementById('scoreTotal').textContent = totalScore.total;
+        
+        const percentage = (totalScore.correct / totalScore.total) * 100;
+        document.getElementById('progressFill').style.width = percentage + '%';
+      }
+    }
+
+    function checkAll(){
+      const inputs = document.querySelectorAll('.translation-input');
+      const resultsDiv = document.getElementById('results');
+      
+      resultsDiv.innerHTML = '';
+      let correctCount = 0;
+      
+      inputs.forEach((inp)=>{
+        const idx = parseInt(inp.dataset.index, 10);
+        const val = canonicalize(inp.value || '');
+        const variants = currentExercises[idx].variants.map(canonicalize);
+        const ok = variants.some(v => v === val || val.includes(v) || v.includes(val));
+        const li = inp.closest('.exercise-item');
+        
+        // Remove previous hints
+        const oldHint = li.querySelector('.small');
+        if (oldHint) oldHint.remove();
+        
+        // Mark answer
+        if (ok) {
+          correctCount++;
+          li.style.background = 'rgba(72,187,120,0.15)';
+          li.style.borderLeft = '4px solid #48bb78';
+        } else {
+          li.style.background = 'rgba(229,62,62,0.1)';
+          li.style.borderLeft = '4px solid #e53e3e';
+          
+          // Show expected answer
+          const hint = document.createElement('div');
+          hint.className = 'small';
+          hint.textContent = '✓ Réponse attendue : ' + currentExercises[idx].variants[0];
+          li.appendChild(hint);
+        }
+      });
+
+      // Update total score
+      totalScore.correct += correctCount;
+      totalScore.total += inputs.length;
+      updateScore();
+
+      // Display results
+      if (correctCount === inputs.length) {
+        resultsDiv.innerHTML = '<div style="background: rgba(72,187,120,0.2); color: #2f855a; padding: 15px; border-radius: 8px;">🎉 Parfait ! Toutes les réponses sont correctes !</div>';
+      } else {
+        resultsDiv.innerHTML = `<div style="background: rgba(229,62,62,0.15); color: #c53030; padding: 15px; border-radius: 8px;">📝 ${correctCount}/${inputs.length} réponses correctes. Continuez à pratiquer !</div>`;
+      }
+    }
+
+    function resetExercise() {
+      document.querySelectorAll('.translation-input').forEach(i => {
+        i.value = '';
+        const li = i.closest('.exercise-item');
+        li.style.background = '';
+        li.style.borderLeft = '4px solid #e2e8f0';
+        const hint = li.querySelector('.small');
+        if (hint) hint.remove();
+      });
+      document.getElementById('results').innerHTML = '';
+    }
+
+    // Event listeners
+    document.getElementById('checkBtn').addEventListener('click', checkAll);
+    document.getElementById('resetBtn').addEventListener('click', resetExercise);
+    document.getElementById('generateBtn').addEventListener('click', generateExercises);
+
+    // Initialize
+    generateExercises();
+  </script>
+</body>
+</html>
