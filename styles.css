@@ -13,6 +13,20 @@ body {
   line-height: 1.4;
 }
 
+/* Page helper: centre les items au milieu de l'écran */
+.centered-page, body.centered-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  margin: 0;
+}
+
 /* Typography */
 h1 {
   font-size: 2.5em;
@@ -208,6 +222,11 @@ input {
   text-align: center;
 }
 
+/* Ensure readable text on light backgrounds */
+.instructions, #rules, .drop, .drop.filled {
+  color: #0f172a;
+}
+
 /* Grid layout */
 .grid {
   display: grid;
@@ -220,6 +239,7 @@ input {
   padding: 12px;
   border-radius: 8px;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+  color: #0f172a;
 }
 
 /* Flexbox utilities */
@@ -234,12 +254,12 @@ input {
 /* Text utilities */
 .small {
   font-size: 13px;
-  color: #555;
+  color: #0f172a;
 }
 
 .hint {
   font-size: 13px;
-  color: #333;
+  color: #0f172a;
 }
 
 .ok {
@@ -300,11 +320,13 @@ input {
   margin: 0 0 5px 0;
   font-size: 14px;
   text-align: center;
+  color: #0f172a;
 }
 
 .phrase-section {
   margin-bottom: 20px;
   text-align: center;
+  color: navy;
 }
 
 #phrase {
@@ -317,6 +339,7 @@ input {
   margin-bottom: 10px;
   font-weight: bold;
   text-align: center;
+  color: #2b6cb0;
 }
 
 .targets {
@@ -325,6 +348,7 @@ input {
   margin-bottom: 20px;
   justify-content: center;
   flex-wrap: wrap;
+  color: #0f172a;
 }
 
 #result {
@@ -361,7 +385,7 @@ input {
 footer {
   margin-top: 14px;
   font-size: 13px;
-  color: #444;
+  color: #0f172a;
   text-align: center;
 }
 
@@ -524,4 +548,4 @@ input[type="text"] {
 .exercise-list { padding-left: 18px; }
 .exercise-item { padding: 10px 8px; margin: 6px 0; border-radius: 6px; }
 .exercise-item input.translation-input { margin-left: 12px; width: 60%; max-width: 420px; display: inline-block; }
-.exercise-item .small { color: #ddd; }
+.exercise-item .small { color: #0f172a; }

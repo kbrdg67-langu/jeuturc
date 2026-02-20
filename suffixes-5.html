@@ -16,7 +16,7 @@
 <div class="grid">
   <div class="panel">
     <div class="phrase-section">
-      <h2>Phrase à traduire</h2>
+      <h2 style="color: #2b6cb0;">Phrase à traduire</h2>
       <strong id="phrase">Je comprends</strong>
     </div>
     <div id="person" style="font-weight: bold; margin-bottom: 10px;">ben</div>
@@ -32,7 +32,6 @@
       <button id="check">Vérifier</button>
       <button id="generate" class="clear">Nouvelle phrase</button>
       <button id="reset" class="clear">Réinitialiser</button>
-      <button id="rulesBtn" class="clear">Rappels grammaticaux</button>
     </div>
     <div id="result"></div>
   </div>
@@ -96,6 +95,10 @@
         <div class="pill" draggable="true" data-id="siniz">‑siniz</div>
         <div class="pill" draggable="true" data-id="sunuz">‑sunuz</div>
         <div class="pill" draggable="true" data-id="sünüz">‑sünüz</div>
+        <div class="pill" draggable="true" data-id="niz">‑niz</div>
+        <div class="pill" draggable="true" data-id="nız">‑nız</div>
+        <div class="pill" draggable="true" data-id="nuz">‑nuz</div>
+        <div class="pill" draggable="true" data-id="nüz">‑nüz</div>
         <div class="pill" draggable="true" data-id="m">‑m</div>
         <div class="pill" draggable="true" data-id="n">‑n</div>
         <div class="pill" draggable="true" data-id="k">‑k</div>
@@ -107,14 +110,6 @@
       </div>
     </div>
   </div>
-</div>
-
-<div id="rules">
-  <h3>Rappels des règles de conjugaison turque</h3>
-  <p><strong>Harmonie vocalique :</strong> Les voyelles des suffixes s'harmonisent avec la voyelle précédente. Après a, ı, o, u : suffixes avec a, ı, o, u. Après e, i, ö, ü : suffixes avec e, i, ö, ü.</p>
-  <p><strong>Consonnes k/ğ :</strong> Pour certains verbes comme istemek, le radical change : iste- + -yecek = isteyecek (k devient ğ pour liaison).</p>
-  <p><strong>Chute des voyelles :</strong> Dans la négation, le a/e de -ma/-me tombe devant une voyelle : anla-ma-iyor = anlamıyor. Pour le présent, la voyelle du radical peut tomber : anla-iyor = anlıyor.</p>
-  <p><strong>Lettres de liaison :</strong> Ajouter "y" entre deux voyelles radical/suffixes. Par exemple : anla-y-acak.</p>
 </div>
 
 <footer>
