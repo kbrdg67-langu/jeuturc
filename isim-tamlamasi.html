@@ -192,78 +192,7 @@
     font-size: 1rem;
   }
 
-  /* QUIZ */
-  .quiz-card {
-    background: var(--creme);
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  .quiz-card .question {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    line-height: 1.5;
-  }
-  .options {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .opt {
-    background: white;
-    border: 2px solid #ddd;
-    border-radius: 6px;
-    padding: 0.65rem 1rem;
-    font-family: 'Syne', sans-serif;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: all 0.15s;
-    text-align: left;
-  }
-  .opt:hover:not(:disabled) { border-color: var(--or); background: #fffbf0; }
-  .opt.correct { border-color: #2e7d32; background: #e8f5e9; color: #1b5e20; }
-  .opt.faux { border-color: var(--rouge); background: #fdecea; color: #b71c1c; }
-  .feedback {
-    margin-top: 0.75rem;
-    padding: 0.6rem 0.9rem;
-    border-radius: 5px;
-    font-size: 0.85rem;
-    display: none;
-    line-height: 1.5;
-  }
-  .feedback.show { display: block; }
-  .feedback.ok { background: #e8f5e9; color: #1b5e20; border-left: 3px solid #2e7d32; }
-  .feedback.ko { background: #fdecea; color: #b71c1c; border-left: 3px solid var(--rouge); }
-
-  /* SCORE */
-  #score-bar {
-    background: var(--brun);
-    color: white;
-    font-family: 'Syne', sans-serif;
-    border-radius: 8px;
-    padding: 1rem 1.5rem;
-    text-align: center;
-    display: none;
-    margin-top: 1rem;
-    font-size: 1.1rem;
-  }
-  #score-bar.show { display: block; }
-
-  /* ASTUCE */
-  .astuce {
-    background: #EAF4FB;
-    border-left: 4px solid var(--bleu);
-    border-radius: 0 6px 6px 0;
-    padding: 1rem 1.25rem;
-    margin: 1rem 0;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: var(--bleu);
-  }
-  .astuce strong { font-family: 'Syne', sans-serif; }
-
+ 
   /* PIÈGE */
   .piege {
     background: #FFF8E1;
@@ -302,7 +231,7 @@
       <p>En français, pour relier deux noms on utilise la préposition <strong>« de »</strong> :<br>
       → <em>la porte <strong>de</strong> la maison</em>, <em>le livre <strong>de</strong> l'étudiant</em></p>
       <p>En turc, il n'y a pas de préposition. On ajoute plutôt des <strong>suffixes</strong> (des terminaisons) aux deux noms. C'est ce qu'on appelle l'<strong>isim tamlaması</strong> — littéralement « groupe nominal ».</p>
-      <p>Il en existe deux types. Pour le niveau A1, on se concentre sur le <strong>belirtili isim tamlaması</strong> (groupe possessif défini), le plus courant.</p>
+      <p>Il en existe deux types. Dans cette leçon, on se concentre sur le <strong>belirtili isim tamlaması</strong> (groupe possessif défini), le plus courant.</p>
     </div>
   </section>
 
@@ -311,7 +240,7 @@
     <div class="section-title">⚙️ La structure</div>
     <div class="formule">
       <div class="eq">NOM 1 + <span style="color:var(--or)">-(n)ın/in/un/ün</span> &nbsp;+&nbsp; NOM 2 + <span style="color:#f8a5a5">-(s)ı/i/u/ü</span></div>
-      <div class="legende">Nom possesseur (génitif) &nbsp;·&nbsp; Nom possédé (suffixe de possession)</div>
+      <div class="legende">Nom possesseur (génitif) &nbsp;·&nbsp; Nom possédé (suffixe de l'accusatif - COD)</div>
     </div>
 
     <table class="table-suffixes">
@@ -325,11 +254,6 @@
         <tr><td>ö, ü</td><td class="suf">-ün</td><td class="suf">-ü</td></tr>
       </tbody>
     </table>
-
-    <div class="astuce">
-      <strong>🔵 L'harmonie vocalique</strong><br>
-      En turc, les suffixes s'accordent avec la <strong>dernière voyelle</strong> du mot. C'est la règle d'harmonie vocalique (ses uyumu). Le tableau ci-dessus vous indique quel suffixe choisir.
-    </div>
 
     <div class="piege">
       <strong>⚠️ Si le nom se termine par une voyelle :</strong><br>
@@ -382,43 +306,6 @@
     </div>
   </section>
 
-  <!-- QUIZ -->
-  <section>
-    <div class="section-title">✏️ Exercices</div>
-
-    <div class="quiz-card">
-      <div class="question">1. Comment dit-on <strong>« la fenêtre de la classe »</strong> ?<br><small style="font-weight:normal;color:#666">sınıf = classe · pencere = fenêtre</small></div>
-      <div class="options">
-        <button class="opt" onclick="repondre(this, true, '✅ Correct ! <em>sınıf</em> → voyelle finale <em>ı</em> → génitif <em>-ın</em> ; <em>pencere</em> → voyelle finale <em>e</em> → possession <em>-si</em> (insertion de <em>-s-</em>).')">sınıfın penceresi</button>
-        <button class="opt" onclick="repondre(this, false, '❌ <em>sınıfı</em> est un suffixe de possession, pas de génitif. Le génitif de <em>sınıf</em> est <em>sınıfın</em>.')">sınıfı penceresi</button>
-        <button class="opt" onclick="repondre(this, false, '❌ Attention à l\'harmonie vocalique : la voyelle finale de <em>sınıf</em> est <em>ı</em>, donc le génitif est <em>-ın</em> et non <em>-in</em>.')">sınıfin penceresi</button>
-      </div>
-      <div class="feedback"></div>
-    </div>
-
-    <div class="quiz-card">
-      <div class="question">2. <strong>öğretmen</strong> (professeur) · <strong>araba</strong> (voiture) — Quel est « la voiture du professeur » ?</div>
-      <div class="options">
-        <button class="opt" onclick="repondre(this, true, '✅ Parfait ! <em>öğretmen</em> → voyelle finale <em>e</em> → génitif <em>-in</em> ; <em>araba</em> → voyelle finale <em>a</em> → possession <em>-sı</em> (avec <em>-s-</em> car <em>araba</em> finit par une voyelle).')">öğretmenin arabası</button>
-        <button class="opt" onclick="repondre(this, false, '❌ Il manque le suffixe génitif sur <em>öğretmen</em>. Sans ce suffixe, il n\'y a pas de lien possessif.')">öğretmen arabası</button>
-        <button class="opt" onclick="repondre(this, false, '❌ <em>-ü</em> ne correspond pas à la voyelle finale <em>a</em> de <em>araba</em>. Rappel : voyelle finale <em>a/ı</em> → suffixe <em>-ı</em>.')">öğretmenin arabayü</button>
-      </div>
-      <div class="feedback"></div>
-    </div>
-
-    <div class="quiz-card">
-      <div class="question">3. Que signifie <strong>« şehrin merkezi »</strong> ?<br><small style="font-weight:normal;color:#666">şehir = ville · merkez = centre</small></div>
-      <div class="options">
-        <button class="opt" onclick="repondre(this, false, '❌ C\'est l\'inverse ! <em>şehrin</em> est au génitif (possesseur = la ville), et <em>merkezi</em> est le possédé.')">le centre possède la ville</button>
-        <button class="opt" onclick="repondre(this, true, '✅ Exact ! <em>şehrin</em> = génitif de <em>şehir</em> (la ville) ; <em>merkezi</em> = le centre + suffixe de possession. → le centre de la ville.')">le centre de la ville</button>
-        <button class="opt" onclick="repondre(this, false, '❌ <em>merkezi</em> est bien le centre, mais la structure entière est possessive, pas adjectivale.')">la ville centrale</button>
-      </div>
-      <div class="feedback"></div>
-    </div>
-
-    <div id="score-bar"></div>
-  </section>
-
   <!-- RÉSUMÉ -->
   <section>
     <div class="section-title">📌 À retenir</div>
@@ -438,37 +325,7 @@
   function toggle(card) {
     card.classList.toggle('ouvert');
   }
-
-  let bonnes = 0, total = 0;
-  const quizzes = document.querySelectorAll('.quiz-card');
-
-  function repondre(btn, estCorrect, msg) {
-    const card = btn.closest('.quiz-card');
-    if (card.dataset.repondu) return;
-    card.dataset.repondu = '1';
-    total++;
-
-    const opts = card.querySelectorAll('.opt');
-    opts.forEach(o => o.disabled = true);
-    btn.classList.add(estCorrect ? 'correct' : 'faux');
-    if (!estCorrect) {
-      opts.forEach(o => {
-        if (o !== btn && o.onclick.toString().includes('true')) o.classList.add('correct');
-      });
-    } else {
-      bonnes++;
-    }
-
-    const fb = card.querySelector('.feedback');
-    fb.innerHTML = msg;
-    fb.className = 'feedback show ' + (estCorrect ? 'ok' : 'ko');
-
-    if (total === quizzes.length) {
-      const bar = document.getElementById('score-bar');
-      const emoji = bonnes === 3 ? '🎉' : bonnes === 2 ? '👍' : '💪';
-      bar.innerHTML = `${emoji} Score : ${bonnes} / ${total} — ${bonnes === 3 ? 'Excellent travail !' : bonnes === 2 ? 'Très bien, relisez les points manqués.' : 'Relisez la leçon et réessayez !'}`;
-      bar.className = 'show';
-    }
+   }
   }
 </script>
 </body>
