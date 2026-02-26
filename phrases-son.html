@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de phrases à traduire</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="centered-page">
+<div class="card" id="card">Clique sur le bouton pour générer une carte.</div>
+<button onclick="generateCard()">Nouvelle carte</button>
+
+<script>
+const cards = [
+"J’ai oublié mes couverts à l’hôtel.",
+"Je ne connais pas cet atelier.",
+"Je connais leurs dimensions : hauteur, largeur et épaisseur.",
+"J’ai oublié votre stylo rouge dans mon bureau.",
+"Je connais ce café.",
+"J’ai oublié notre déjeuner ce matin.",
+"J’ai oublié ton entretien hier, désolé.",
+"Je ne sais pas (parler) turc.",
+"J’ai oublié mon rendez-vous.",
+"Où est ton moule bleu ?",
+"Où est notre atelier ?",
+"Où est son stylo vert ?",
+"Où est mon bureau ?",
+"Où est votre machine marron ?",
+"Est-ce qu'il y a une salle de réunion libre demain ?",
+"Est-ce que vous avez du thé vert ?",
+"Est-ce que tu as de l'eau ?",
+"Est-ce qu'il a son ordinateur dans son sac ?",
+"Est-ce que nous avons une visite aujourd'hui ?",
+"Quel heure est-il ?",
+"Il est 15:37.",
+"Il est 9:30.",
+"Il est 16:55.",
+"Il est 8:15.",
+"Il est 13:15.",
+"Mon rendez-vous est à 14:00.",
+"Ton entretien est demain à 9:30.",
+"Son atelier est à 16:15.",
+"Mon bureau est au deuxième étage.",
+"Votre réunion est dans la troisième salle de réunion.",
+"Son outil est dans l'atelier orange.",
+"Notre machine rouge est en stock.",
+"Ton moule rose est sur la ligne de production.",
+"Il n'y a pas de livraison aujourd'hui.",
+"Il y a un problème sur la machine",
+"Il n'y a pas de stock ce mois-ci.",
+"Ton entretien n'est pas demain.",
+"Votre commande n'est pas prête.",
+"Quel est le prix de ce produit ?",
+"Quel est le prix de cette machine ?",
+"Il y a combien de stylo vert, là-bas ?",
+"Il y a combien de moule violet dans l'atelier ?",
+"La hauteur de la pièce est de 15 cm.",
+"La largeur est de 30 cm, l'épaisseur de 4 cm.",
+];
+
+function generateCard() {
+    const index = Math.floor(Math.random() * cards.length);
+    document.getElementById("card").innerText = cards[index];
+}
+</script>
+</body>
+</html>
